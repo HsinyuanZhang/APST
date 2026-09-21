@@ -1,4 +1,4 @@
-data/
+/data/
 *.nwb
 __pycache__/
 *.py[cod]

@@ -2,23 +2,24 @@
 
 Code for **APST** (association profile conditioning) on the
 [FALCON](https://snel-repo.github.io/falcon) few-shot neural decoding
-benchmark. Training and decoder code will be added here. This first snapshot
-covers how to get and load the public FALCON recordings.
+benchmark and on [DANDI 000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)
+SUA reaching recordings. Training and decoder code will be added later. This
+snapshot covers how to download and load the public datasets.
 
 ## Data
 
-APST uses the three FALCON motor tasks hosted on [DANDI](https://dandiarchive.org/).
-These are the same dandisets as the official [EvalAI FALCON challenge](https://eval.ai/web/challenges/challenge-page/2319/overview).
+| Dataset | Source | Notes |
+|---------|--------|-------|
+| FALCON M1 | [DANDI 000941](https://dandiarchive.org/dandiset/000941) | `sub-MonkeyL` |
+| FALCON M2 | [DANDI 000953](https://dandiarchive.org/dandiset/000953) | `sub-MonkeyN` |
+| FALCON H1 | [DANDI 000954](https://dandiarchive.org/dandiset/000954) | `sub-HumanPitt` |
+| DANDI 688 SUA | [000688 v0.250122.1735](https://dandiarchive.org/dandiset/000688/0.250122.1735) | `sub-C`, `sub-M`, `sub-J` |
 
-| Task | DANDI | Subject folder |
-|------|-------|----------------|
-| M1 | [000941](https://dandiarchive.org/dandiset/000941) | `sub-MonkeyL` |
-| M2 | [000953](https://dandiarchive.org/dandiset/000953) | `sub-MonkeyN` |
-| H1 | [000954](https://dandiarchive.org/dandiset/000954) | `sub-HumanPitt` |
+FALCON dandisets have three public splits: `held-in-calib`, `held-in-minival`,
+and `held-out-calib`. Official FALCON test labels stay on EvalAI.
 
-Each dandiset has three public splits: `held-in-calib` (training),
-`held-in-minival` (local sanity check), and `held-out-calib` (development
-held-out). Official test labels stay on EvalAI and are not in these files.
+DANDI 000688 is used as sorted SUA. Download only `sub-C` / `sub-M` / `sub-J`
+(`sub-T` is threshold crossings and is not fetched).
 
 ### Install
 
@@ -27,21 +28,24 @@ python -m pip install -e .
 python -m pip install "falcon-challenge @ git+https://github.com/snel-repo/falcon-challenge.git"
 ```
 
-`dandi` is enough to download. `falcon-challenge` is required to load NWB files
-with the official evaluator reader.
+`dandi` and `pynwb` are enough to download everything and to load DANDI 000688.
+`falcon-challenge` is required only to load FALCON NWB files with the official
+evaluator reader.
 
 ### Download
 
 ```bash
-# all three tasks into ./data/<dandiset id>/
+# FALCON M1/M2/H1 and DANDI 000688 SUA into ./data/
 python -m apst.data.download
 
-# one task, custom directory
-python -m apst.data.download --tasks m1 --root /path/to/data
+# FALCON only
+python -m apst.data.download --tasks m1 m2 h1
+
+# DANDI 000688, one subject
+python -m apst.data.download --tasks dandi688 --subjects sub-C
 ```
 
-Set `APST_DATA_ROOT` (or `EVAL_DATA_PATH`, the FALCON evaluator variable) if
-the files are not under `./data`.
+Set `APST_DATA_ROOT` (or `EVAL_DATA_PATH`) if the files are not under `./data`.
 
 Equivalent DANDI CLI:
 
@@ -49,9 +53,10 @@ Equivalent DANDI CLI:
 dandi download https://dandiarchive.org/dandiset/000941 -o data
 dandi download https://dandiarchive.org/dandiset/000953 -o data
 dandi download https://dandiarchive.org/dandiset/000954 -o data
+dandi download "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/?path=sub-C" -o data/000688
 ```
 
-### Load
+### Load FALCON
 
 ```python
 from apst.data import list_sessions, load_session
@@ -67,6 +72,18 @@ eval_mask = item["eval_mask"]    # bins scored by FALCON
 `falcon_challenge.dataloaders.load_nwb`, so binning, EMG/kinematics, trial
 boundaries, and `eval_mask` match the EvalAI evaluator.
 
+### Load DANDI 000688
+
+```python
+from apst.data import list_dandi688_sessions, load_dandi688_session
+
+rows = list_dandi688_sessions(subject="sub-C")
+item = load_dandi688_session("sub-C_ses-CO-20150716")
+neural = item["neural"]      # 20 ms M1 spike counts, time x units
+velocity = item["velocity"]  # interpolated cursor velocity
+trials = item["trials"]      # trial intervals from the NWB
+```
+
 ## Acknowledgements
 
 We thank the FALCON organizers for the benchmark, the public NWB layout, and
@@ -75,5 +92,6 @@ the evaluation protocol, and the EvalAI team for hosting the
 Recordings are released on DANDI by the original authors: Rouse & Schieber
 (M1, [000941](https://dandiarchive.org/dandiset/000941)); Nason-Tomaszewski,
 Mender & Chestek (M2, [000953](https://dandiarchive.org/dandiset/000953));
-Ye, Collinger & Gaunt (H1, [000954](https://dandiarchive.org/dandiset/000954)).
-The loader follows [`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).
+Ye, Collinger & Gaunt (H1, [000954](https://dandiarchive.org/dandiset/000954));
+and O'Doherty et al. (DANDI [000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)).
+The FALCON loader follows [`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).

@@ -1,13 +1,12 @@
-"""Official FALCON dandisets used by APST.
-
-IDs match ``falcon_challenge.evaluator.DANDI_FOLDER_MAP`` for M1, M2, and H1.
-"""
+"""Datasets used by APST: FALCON M1/M2/H1 and DANDI 000688 SUA."""
 from __future__ import annotations
 
 import os
 from pathlib import Path
 
-TASKS = ("m1", "m2", "h1")
+FALCON_TASKS = ("m1", "m2", "h1")
+DANDI688_SUBJECTS = ("sub-C", "sub-M", "sub-J")
+TASKS = FALCON_TASKS + ("dandi688",)
 
 DANDISETS = {
     "m1": {
@@ -23,6 +22,7 @@ DANDISETS = {
         "n_channels": 64,
         "n_outputs": 16,
         "bin_size_ms": 20,
+        "kind": "falcon",
     },
     "m2": {
         "dandiset": "000953",
@@ -37,6 +37,7 @@ DANDISETS = {
         "n_channels": 96,
         "n_outputs": 2,
         "bin_size_ms": 20,
+        "kind": "falcon",
     },
     "h1": {
         "dandiset": "000954",
@@ -51,6 +52,22 @@ DANDISETS = {
         "n_channels": 176,
         "n_outputs": 7,
         "bin_size_ms": 20,
+        "kind": "falcon",
+    },
+    "dandi688": {
+        "dandiset": "000688",
+        "version": "0.250122.1735",
+        "subjects": DANDI688_SUBJECTS,
+        "url": "https://dandiarchive.org/dandiset/000688/0.250122.1735",
+        "citation": (
+            "O'Doherty, J. E. et al. Multi-session primate motor cortex SUA during "
+            "center-out and random-target reaching (Version 0.250122.1735) [Data set]. "
+            "DANDI archive. https://dandiarchive.org/dandiset/000688/0.250122.1735"
+        ),
+        "excluded_subjects": ("sub-T",),
+        "n_outputs": 2,
+        "bin_size_ms": 20,
+        "kind": "dandi688",
     },
 }
 

@@ -9,7 +9,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from apst.data.catalog import DANDISETS, SPLITS, TASKS, default_data_root
+from apst.data.catalog import DANDISETS, FALCON_TASKS, SPLITS, default_data_root
 
 _SES_TOKEN = "_ses-"
 
@@ -45,8 +45,8 @@ def list_sessions(
 ) -> list[dict[str, Any]]:
     """Return NWB paths for one FALCON split, sorted by session id."""
     task = task.lower()
-    if task not in DANDISETS:
-        raise ValueError(f"unknown task {task!r}; expected one of {TASKS}")
+    if task not in FALCON_TASKS:
+        raise ValueError(f"unknown FALCON task {task!r}; expected one of {FALCON_TASKS}")
     if split not in SPLITS:
         raise ValueError(f"unknown split {split!r}; expected one of {tuple(SPLITS)}")
     data_root = Path(root).expanduser().resolve() if root else default_data_root()
@@ -78,8 +78,8 @@ def load_nwb_file(path: str | Path, task: str):
     from falcon_challenge.dataloaders import load_nwb
 
     task = task.lower()
-    if task not in DANDISETS:
-        raise ValueError(f"unknown task {task!r}")
+    if task not in FALCON_TASKS:
+        raise ValueError(f"unknown FALCON task {task!r}")
     falcon_task = getattr(FalconTask, DANDISETS[task]["falcon_task"])
     return load_nwb(Path(path), falcon_task)
 

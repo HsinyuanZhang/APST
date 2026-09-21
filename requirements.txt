@@ -1,0 +1,4 @@
+numpy
+dandi
+pynwb
+falcon-challenge @ git+https://github.com/snel-repo/falcon-challenge.git

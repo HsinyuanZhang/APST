@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apst"
+version = "0.1.0"
+description = "APST: association profile conditioning for FALCON few-shot neural decoding."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Hsinyuan Zhang" }]
+dependencies = [
+  "numpy",
+  "dandi",
+  "pynwb",
+]
+
+[project.scripts]
+apst-download = "apst.data.download:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "apst"
-version = "0.1.0"
-description = "APST: association profile conditioning for FALCON few-shot neural decoding."
+version = "0.2.0"
+description = "APST: association profile conditioning for cross-session motor decoding."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -16,8 +16,28 @@ dependencies = [
   "pynwb",
 ]
 
+[project.optional-dependencies]
+experiments = [
+  "torch>=2.5.1,<2.6",
+  "numpy==2.0.1",
+  "scipy==1.14.1",
+  "scikit-learn==1.5.2",
+  "pynwb==2.8.2",
+  "hdmf==3.14.5",
+  "h5py==3.12.1",
+]
+test = ["pytest>=7.4,<9"]
+
 [project.scripts]
 apst-download = "apst.data.download:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+"apst.legacy_dandi" = ["*.json"]
+"apst.dandi_subc" = ["*.json"]
+"apst.dandi_subm" = ["*.json"]
+
+[tool.setuptools]
+license-files = ["LICENSE", "LICENSES/*.txt"]

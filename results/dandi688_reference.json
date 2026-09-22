@@ -1,0 +1,113 @@
+{
+  "description": "Historical frozen-checkpoint results, not a release retraining guarantee. Source CSV hashes refer to original experiment artifacts. Raw data and checkpoints are not bundled.",
+  "results": [
+    {
+      "subject": "sub-C",
+      "cell": "sua_act_only_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": 0.4021854001255696,
+      "checkpoint_sha256": "25f0b0e885a9fba53fd95e4e939481308bbd6e07b28a1b0aa1cd64299b73da58",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-C",
+      "cell": "sua_dual_site_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": 0.7775971052580782,
+      "checkpoint_sha256": "1372d016dd5e46ebcdb7ff6a0401ebf1e35aab99aa8ee2e7b9ce8a867615bcf3",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-C",
+      "cell": "sua_dual_site_F0_s42",
+      "condition": "profile_shuffle",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": -0.0004685280705516599,
+      "checkpoint_sha256": "1372d016dd5e46ebcdb7ff6a0401ebf1e35aab99aa8ee2e7b9ce8a867615bcf3",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-C",
+      "cell": "sua_dual_site_flat_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": 0.7781766861923578,
+      "checkpoint_sha256": "429307f9615b8f3feacca3002f170d879cb48966019671aaceab18f2c92086ca",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-C",
+      "cell": "sua_identity_only_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": 0.7544582150419042,
+      "checkpoint_sha256": "2680ba10cebaa8e80a43e08704de1f343e441d9d81d8779e8002cc5003dc2c90",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-C",
+      "cell": "sua_token_only_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 6,
+      "equal_session_mean_r2": 0.7722296022054594,
+      "checkpoint_sha256": "5f4582359598b25a68867b0f8871b8a66cc04b6a285d6556159723fb0ec982b8",
+      "source_csv_name": "final_sua_only.csv",
+      "source_csv_sha256": "636c3b57f3f876d4dda0334fabbeafc222b074546060449e18533632630ead5c"
+    },
+    {
+      "subject": "sub-M",
+      "cell": "sua_act_only_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 3,
+      "equal_session_mean_r2": 0.578239248838273,
+      "checkpoint_sha256": "09eb5dfe6da5cd89183584e2e258975c2458a647f6d82b71543f60c5173e2d16",
+      "source_csv_name": "final_rows.csv",
+      "source_csv_sha256": "fa71bc207d532bc1dac0600dbd2910ea5aa2e56ec798e94327392f949322d583"
+    },
+    {
+      "subject": "sub-M",
+      "cell": "sua_dual_site_F0_s42",
+      "condition": "intact",
+      "split": "final",
+      "seed": 42,
+      "session_count": 3,
+      "equal_session_mean_r2": 0.8077468957206362,
+      "checkpoint_sha256": "763ad1105fafdceced7d35bc270acbd2e3e8f9986ed3d9acc156fe6f568bdf65",
+      "source_csv_name": "final_rows.csv",
+      "source_csv_sha256": "fa71bc207d532bc1dac0600dbd2910ea5aa2e56ec798e94327392f949322d583"
+    },
+    {
+      "subject": "sub-M",
+      "cell": "sua_dual_site_F0_s42",
+      "condition": "profile_shuffle",
+      "split": "final",
+      "seed": 42,
+      "session_count": 3,
+      "equal_session_mean_r2": 0.030958091092403873,
+      "checkpoint_sha256": "763ad1105fafdceced7d35bc270acbd2e3e8f9986ed3d9acc156fe6f568bdf65",
+      "source_csv_name": "final_rows.csv",
+      "source_csv_sha256": "fa71bc207d532bc1dac0600dbd2910ea5aa2e56ec798e94327392f949322d583"
+    }
+  ]
+}

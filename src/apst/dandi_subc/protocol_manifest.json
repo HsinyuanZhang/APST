@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "purpose": "Strict validation-only SUA manifest: only train and validation NWBs may be opened.",
+  "task": "CO",
+  "max_units_exclusive": 100,
+  "split_counts": [27, 6, 6],
+  "session_splits": {
+    "train": [
+      "sub-C_ses-CO-20131003", "sub-C_ses-CO-20131022", "sub-C_ses-CO-20131023",
+      "sub-C_ses-CO-20131031", "sub-C_ses-CO-20131101", "sub-C_ses-CO-20131203",
+      "sub-C_ses-CO-20131204", "sub-C_ses-CO-20131219", "sub-C_ses-CO-20131220",
+      "sub-C_ses-CO-20150309", "sub-C_ses-CO-20150311", "sub-C_ses-CO-20150312",
+      "sub-C_ses-CO-20150313", "sub-C_ses-CO-20150319", "sub-C_ses-CO-20150629",
+      "sub-C_ses-CO-20150630", "sub-C_ses-CO-20150701", "sub-C_ses-CO-20150703",
+      "sub-C_ses-CO-20150706", "sub-C_ses-CO-20150707", "sub-C_ses-CO-20150708",
+      "sub-C_ses-CO-20150709", "sub-C_ses-CO-20150710", "sub-C_ses-CO-20150713",
+      "sub-C_ses-CO-20150714", "sub-C_ses-CO-20150715", "sub-C_ses-CO-20150716"
+    ],
+    "val": [
+      "sub-C_ses-CO-20151103", "sub-C_ses-CO-20151104", "sub-C_ses-CO-20151106",
+      "sub-C_ses-CO-20151109", "sub-C_ses-CO-20151110", "sub-C_ses-CO-20151112"
+    ],
+    "test": [
+      "sub-C_ses-CO-20151113", "sub-C_ses-CO-20151116", "sub-C_ses-CO-20151117",
+      "sub-C_ses-CO-20151119", "sub-C_ses-CO-20151120", "sub-C_ses-CO-20151201"
+    ]
+  }
+}

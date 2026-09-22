@@ -13,3 +13,16 @@ venv/
 .DS_Store
 .idea/
 .vscode/
+
+# Experiment outputs and local credentials
+/outputs/
+/runs/
+/cache/
+/prepared_sua/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.pkl
+*.log
+.env.*

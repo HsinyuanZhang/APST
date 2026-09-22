@@ -1,0 +1,15 @@
+{
+  "schema": "dandi688_subm_budget_v1",
+  "budgets": [4, 8, 16, 32],
+  "methods": {
+    "APST-FULL": "dual_site",
+    "ACT-only": "act_only"
+  },
+  "selection_runs": {
+    "dual_site": "runs/sua_dual_site_F0_s42",
+    "act_only": "runs/sua_act_only_F0_s42"
+  },
+  "calibration": "first_M_legal_trials; activity and, for dual_site only, MOVE-T4 association profile",
+  "source_stats": "selected checkpoint source-only statistics; never refit on dev or final",
+  "prediction": "fixed selected checkpoint; full-recording causal clock; reset-per-session EMA alpha 1/3; unchanged Q50 query_indices"
+}

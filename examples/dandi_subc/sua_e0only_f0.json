@@ -1,0 +1,130 @@
+{
+  "architecture": {
+    "context_bins": 50,
+    "depth": 4,
+    "e0_dim": 50,
+    "film_rank": 8,
+    "heads": 8,
+    "hidden": 64,
+    "projection": 16,
+    "recency_initial_half_life_seconds": 25.0,
+    "sinusoidal_pe": false,
+    "support_trials": 33,
+    "width": 256,
+    "windows": [
+      13,
+      12,
+      12,
+      12
+    ]
+  },
+  "cache": "$APST_SUBC_ROOT/prepared_sua",
+  "encoder_family": "concat",
+  "evaluation_conditions": [
+    "intact"
+  ],
+  "film": true,
+  "identity_profile": true,
+  "loss": "raw MSE of source-standardized velocity; no output EMA in training",
+  "method": "identity_only",
+  "optimizer_groups": {
+    "frozen_encoder_in_optimizer": false,
+    "shared_trainable_weight_decay": 0.01,
+    "slope_log_lr_multiplier": 1.0,
+    "slope_log_weight_decay": 0.0
+  },
+  "output_ema": {
+    "alpha": 0.3333333333333333,
+    "clock": "full_recording",
+    "reset": "session",
+    "state_0": "pred_0",
+    "training": false
+  },
+  "precision": {
+    "encoder_and_film": "float32",
+    "evaluation": "float32",
+    "output_ema_accumulator": "float64",
+    "source_decoder": "bfloat16_autocast_cuda_float32_cpu"
+  },
+  "prepared_receipt_sha256": "GENERATED_BY_INIT_CONFIG",
+  "primary_model": true,
+  "protocol": {
+    "activity_trials": 33,
+    "bin_seconds": 0.02,
+    "canonical_electrodes": 96,
+    "carrier_trials": 33,
+    "dev_sessions": [
+      "sub-C_ses-CO-20151103",
+      "sub-C_ses-CO-20151104",
+      "sub-C_ses-CO-20151106",
+      "sub-C_ses-CO-20151109",
+      "sub-C_ses-CO-20151110",
+      "sub-C_ses-CO-20151112"
+    ],
+    "final_sessions": [
+      "sub-C_ses-CO-20151113",
+      "sub-C_ses-CO-20151116",
+      "sub-C_ses-CO-20151117",
+      "sub-C_ses-CO-20151119",
+      "sub-C_ses-CO-20151120",
+      "sub-C_ses-CO-20151201"
+    ],
+    "manifest_sha256": "4607e979c6c2ff451c147a8d9878fe1080b9d3e9bbc7304b559616eb2a13a0c9",
+    "max_units": 100,
+    "move_window_after_go_seconds": [
+      0.1,
+      0.6
+    ],
+    "move_window_note": "DANDI event-relative [go+0.1,go+0.6) is a 500 ms task anchor; it is not an M2 absolute timestamp claim",
+    "q50_trial_index": 50,
+    "schema": "dandi688_bench_v2_2015_only",
+    "train_sessions": [
+      "sub-C_ses-CO-20150309",
+      "sub-C_ses-CO-20150311",
+      "sub-C_ses-CO-20150312",
+      "sub-C_ses-CO-20150313",
+      "sub-C_ses-CO-20150319",
+      "sub-C_ses-CO-20150629",
+      "sub-C_ses-CO-20150630",
+      "sub-C_ses-CO-20150701",
+      "sub-C_ses-CO-20150703",
+      "sub-C_ses-CO-20150706",
+      "sub-C_ses-CO-20150707",
+      "sub-C_ses-CO-20150708",
+      "sub-C_ses-CO-20150709",
+      "sub-C_ses-CO-20150710",
+      "sub-C_ses-CO-20150713",
+      "sub-C_ses-CO-20150714",
+      "sub-C_ses-CO-20150715",
+      "sub-C_ses-CO-20150716"
+    ],
+    "window_bins": 50
+  },
+  "recipe": {
+    "batch": 32,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "ema_decay": 0.9995,
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "lr_min_factor": 0.1,
+    "lr_peak": 0.0003,
+    "segments": 24,
+    "updates_per_segment": 3165,
+    "warmup_updates": 3165,
+    "weight_decay": 0.01,
+    "whole_unit_dropout": 0.1
+  },
+  "representation": "sua",
+  "schema": "dandi688_f0_film_sites_v1",
+  "seed": 42,
+  "selection": "earliest_finite_max_equal_session_dev6",
+  "shuffle_scope": "selected FULL F0 only, no reselection",
+  "shuffle_seed": 42,
+  "stage": "train",
+  "target_parameter_updates": false,
+  "temporal": "F0",
+  "token_profile": false
+}

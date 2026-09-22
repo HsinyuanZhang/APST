@@ -3,8 +3,10 @@
 Code for **APST** (association profile conditioning) on the
 [FALCON](https://snel-repo.github.io/falcon) few-shot neural decoding
 benchmark and on [DANDI 000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)
-SUA reaching recordings. Training and decoder code will be added later. This
-snapshot covers how to download and load the public datasets.
+SUA reaching recordings. The DANDI688 experiment code includes source pretraining,
+frozen-encoder decoder training, development selection, held-out evaluation,
+association-profile controls, and calibration-budget evaluation for **Sub-C**
+and **Sub-M**. FALCON download and loading utilities remain available.
 
 ## Data
 
@@ -95,3 +97,40 @@ Mender & Chestek (M2, [000953](https://dandiarchive.org/dandiset/000953));
 Ye, Collinger & Gaunt (H1, [000954](https://dandiarchive.org/dandiset/000954));
 and O'Doherty et al. (DANDI [000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)).
 The FALCON loader follows [`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).
+
+## DANDI688 experiments
+
+Install the experiment dependencies (Python 3.10 or newer):
+
+```bash
+python -m pip install -e ".[experiments]"
+python -m apst.data.download --tasks dandi688 --subjects sub-C sub-M
+```
+
+The experiments use **2015 center-out M1 sorted single units**, with separate
+source training for each animal. They are within-animal cross-session
+experiments; no Sub-C checkpoint is transferred to Sub-M.
+
+| Protocol | Source sessions | Development sessions | Final sessions | Guide |
+|----------|----------------:|---------------------:|---------------:|-------|
+| Sub-C | 18 | 6 | 6 | [Sub-C reproduction](docs/dandi_subc.md) |
+| Sub-M | 6 | 2 | 3 | [Sub-M reproduction](docs/dandi_subm.md) |
+
+Each guide lists preparation, training, selection, final evaluation, and the
+4/8/16/32-trial calibration-budget commands. APST uses association profiles at
+both the E0 and token sites; ACT-only uses calibration activity without either
+profile route. Target calibration does not update the APST or ACT model weights.
+Output EMA has alpha 1/3 and runs only at inference on the full recording clock,
+with its state reset for each session. Learnable recency slopes have zero weight
+decay.
+
+Source code and configurations are included; NWB data, prepared arrays,
+checkpoints, and prediction files are not bundled. Download the public data and
+train the models following the relevant guide. Historical numerical references
+are recorded in [reference results](results/dandi688_reference.json); they are
+not results of a new training run performed by installing this package.
+
+`apst.models` provides the shared set-temporal decoder, recency implementation,
+and pooled-carrier FiLM. `apst.legacy_dandi` contains the shared DANDI loading and
+profile utilities; `apst.dandi_subc` and `apst.dandi_subm` preserve the two
+experiment protocols separately.

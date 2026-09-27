@@ -1,162 +1,49 @@
 # APST
 
-Code for **APST** (association profile conditioning) on the
-[FALCON](https://snel-repo.github.io/falcon) few-shot neural decoding
-benchmark and on [DANDI 000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)
-SUA reaching recordings. The DANDI688 experiment code includes source pretraining,
-frozen-encoder decoder training, development selection, held-out evaluation,
-association-profile controls, and calibration-budget evaluation for **Sub-C**
-and **Sub-M**, including a FALCON-derived RNN comparison. FALCON download and
-loading utilities remain available.
+Association profile conditioning for cross-session motor decoding with a
+set-temporal transformer and no target-session gradient updates.
 
-## Data
+## Datasets
 
-| Dataset | Source | Notes |
-|---------|--------|-------|
-| FALCON M1 | [DANDI 000941](https://dandiarchive.org/dandiset/000941) | `sub-MonkeyL` |
-| FALCON M2 | [DANDI 000953](https://dandiarchive.org/dandiset/000953) | `sub-MonkeyN` |
-| FALCON H1 | [DANDI 000954](https://dandiarchive.org/dandiset/000954) | `sub-HumanPitt` |
-| DANDI 688 SUA | [000688 v0.250122.1735](https://dandiarchive.org/dandiset/000688/0.250122.1735) | `sub-C`, `sub-M`, `sub-J` |
+| Dataset | Public data |
+| --- | --- |
+| FALCON M1 | [DANDI 000941](https://dandiarchive.org/dandiset/000941) |
+| FALCON M2 | [DANDI 000953](https://dandiarchive.org/dandiset/000953) |
+| FALCON H1 | [DANDI 000954](https://dandiarchive.org/dandiset/000954) |
+| DANDI688 SUA, Sub-C and Sub-M | [DANDI 000688](https://dandiarchive.org/dandiset/000688/0.250122.1735) |
 
-FALCON dandisets have three public splits: `held-in-calib`, `held-in-minival`,
-and `held-out-calib`. Official FALCON test labels stay on EvalAI.
+## Getting started
 
-DANDI 000688 is used as sorted SUA. Download only `sub-C` / `sub-M` / `sub-J`
-(`sub-T` is threshold crossings and is not fetched).
-
-### Install
-
-```bash
-python -m pip install -e .
-python -m pip install "falcon-challenge @ git+https://github.com/snel-repo/falcon-challenge.git"
-```
-
-`dandi` and `pynwb` are enough to download everything and to load DANDI 000688.
-`falcon-challenge` is required only to load FALCON NWB files with the official
-evaluator reader.
-
-### Download
-
-```bash
-# FALCON M1/M2/H1 and DANDI 000688 SUA into ./data/
-python -m apst.data.download
-
-# FALCON only
-python -m apst.data.download --tasks m1 m2 h1
-
-# DANDI 000688, one subject
-python -m apst.data.download --tasks dandi688 --subjects sub-C
-```
-
-Set `APST_DATA_ROOT` (or `EVAL_DATA_PATH`) if the files are not under `./data`.
-
-Equivalent DANDI CLI:
-
-```bash
-dandi download https://dandiarchive.org/dandiset/000941 -o data
-dandi download https://dandiarchive.org/dandiset/000953 -o data
-dandi download https://dandiarchive.org/dandiset/000954 -o data
-dandi download "https://api.dandiarchive.org/api/dandisets/000688/versions/0.250122.1735/assets/?path=sub-C" -o data/000688
-```
-
-### Load FALCON
-
-```python
-from apst.data import list_sessions, load_session
-
-rows = list_sessions("m1", split="held_in")
-item = load_session("m1", session=rows[0]["session"], split="held_in")
-neural = item["neural"]          # time x units
-covariates = item["covariates"]  # time x outputs
-eval_mask = item["eval_mask"]    # bins scored by FALCON
-```
-
-`load_session` / `load_nwb_file` call
-`falcon_challenge.dataloaders.load_nwb`, so binning, EMG/kinematics, trial
-boundaries, and `eval_mask` match the EvalAI evaluator.
-
-### Load DANDI 000688
-
-```python
-from apst.data import list_dandi688_sessions, load_dandi688_session
-
-rows = list_dandi688_sessions(subject="sub-C")
-item = load_dandi688_session("sub-C_ses-CO-20150716")
-neural = item["neural"]      # 20 ms M1 spike counts, time x units
-velocity = item["velocity"]  # interpolated cursor velocity
-trials = item["trials"]      # trial intervals from the NWB
-```
-
-## Acknowledgements
-
-We thank the FALCON organizers for the benchmark, the public NWB layout, and
-the evaluation protocol, and the EvalAI team for hosting the
-[FALCON challenge](https://eval.ai/web/challenges/challenge-page/2319/overview).
-Recordings are released on DANDI by the original authors: Rouse & Schieber
-(M1, [000941](https://dandiarchive.org/dandiset/000941)); Nason-Tomaszewski,
-Mender & Chestek (M2, [000953](https://dandiarchive.org/dandiset/000953));
-Ye, Collinger & Gaunt (H1, [000954](https://dandiarchive.org/dandiset/000954));
-and O'Doherty et al. (DANDI [000688](https://dandiarchive.org/dandiset/000688/0.250122.1735)).
-The FALCON loader follows [`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).
-
-## DANDI688 experiments
-
-Install the experiment dependencies (Python 3.10 or newer):
+Python 3.10 or newer:
 
 ```bash
 python -m pip install -e ".[experiments]"
 python -m apst.data.download --tasks dandi688 --subjects sub-C sub-M
 ```
 
-The experiments use **2015 center-out M1 sorted single units**, with separate
-source training for each animal. They are within-animal cross-session
-experiments; no Sub-C checkpoint is transferred to Sub-M.
+Reproduction guides: [Sub-C](docs/dandi_subc.md),
+[Sub-M](docs/dandi_subm.md), and [RNN baselines](docs/dandi_rnn.md).
+They cover training, evaluation, and calibration-budget experiments.
+The RNN baseline follows FALCON; its reference and DANDI settings are documented
+in the RNN guide.
 
-| Protocol | Source sessions | Development sessions | Final sessions | Guide |
-|----------|----------------:|---------------------:|---------------:|-------|
-| Sub-C | 18 | 6 | 6 | [Sub-C reproduction](docs/dandi_subc.md) |
-| Sub-M | 6 | 2 | 3 | [Sub-M reproduction](docs/dandi_subm.md) |
+For FALCON data, run `python -m apst.data.download --tasks m1 m2 h1`.
+The FALCON loader additionally requires
+[`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).
 
-Each guide lists preparation, training, selection, final evaluation, and the
-4/8/16/32-trial calibration-budget commands. APST uses association profiles at
-both the E0 and token sites; ACT-only uses calibration activity without either
-profile route. Target calibration does not update the APST or ACT model weights.
-Output EMA has alpha 1/3 and runs only at inference on the full recording clock,
-with its state reset for each session. Learnable recency slopes have zero weight
-decay.
+## Acknowledgements
 
-Source code and configurations are included; NWB data, prepared arrays,
-checkpoints, and prediction files are not bundled. Download the public data and
-train the models following the relevant guide. Historical numerical references
-are recorded in [reference results](results/dandi688_reference.json); they are
-not results of a new training run performed by installing this package.
+We thank the original dataset authors and [DANDI](https://dandiarchive.org/)
+for sharing the recordings, the [FALCON](https://snel-repo.github.io/falcon)
+organizers for the benchmark and baseline implementations, and
+[EvalAI](https://eval.ai/web/challenges/challenge-page/2319/overview)
+for hosting the evaluation.
 
-`apst.models` provides the shared set-temporal decoder, recency implementation,
-and pooled-carrier FiLM. `apst.legacy_dandi` contains the shared DANDI loading and
-profile utilities; `apst.dandi_subc` and `apst.dandi_subm` preserve the two
-experiment protocols separately.
+## Citation
 
-## RNN comparison on the same DANDI splits
+If you use this code, please cite our APST paper. The arXiv link and BibTeX
+entry will be added when the preprint is available.
 
-The [RNN reproduction guide](docs/dandi_rnn.md) covers source training,
-zero-shot transfer, supervised training from scratch on each target session,
-and fine-tuning a source-trained model. The calibration-budget comparison uses
-4, 8, 16, and 32 labeled trials. Development selection precedes final evaluation;
-final outputs retain per-session scores and checkpoint bindings.
+## Contact
 
-The RNN architecture follows the movement-decoding baseline in
-[FALCON (NeurIPS 2024), Appendix A.4.2](https://papers.neurips.cc/paper_files/paper/2024/file/8c2e6bb15be1894b8fb4e0f9bcad1739-Paper-Datasets_and_Benchmarks_Track.pdf).
-The guide documents the reference implementation and the DANDI training and
-calibration protocol. APST and ACT-only use frozen target-session inference;
-RNN fine-tuning updates the source-trained model using target calibration labels.
-
-## Reproduction checks
-
-```bash
-python -m pip install -e ".[experiments,test]"
-python -m pytest -q
-```
-
-See [release validation](docs/release_validation.md) for the checks performed on
-this code release. Historical numerical references and freshly generated run
-receipts are kept separate.
+[zhangxy8@connect.hku.hk](mailto:zhangxy8@connect.hku.hk)

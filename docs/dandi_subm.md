@@ -11,11 +11,11 @@ Set the raw NWB directory and a fresh artifact directory before every command:
 export APST_DATA_ROOT=/absolute/path/to/data/000688/sub-M
 export APST_SUBM_ROOT=/absolute/path/to/subm_artifacts
 export PYTHONNOUSERSITE=1
-PY=python
+PY=python3
 ```
 
-Install the release into the active environment first (for example,
-`pip install .`).  The commands do not require a checkout-specific
+Install the experiment dependencies into the active environment first (for
+example, `python -m pip install ".[experiments]"`). The commands do not require a checkout-specific
 `PYTHONPATH`.
 
 Materialize and audit the source/development SUA cache (the final roster is

@@ -43,3 +43,37 @@ Additional extraction checks completed before publication:
 Full reproduction requires downloading the public NWB files and following
 both subject guides. Published checkpoints and raw data are not part of this
 source release.
+
+## September 2026 portability update
+
+The APST entrypoints were rechecked for both historical rosters: Sub-C
+18/6/6 and Sub-M 6/2/3 source/development/final sessions. The Sub-C default
+artifact directory now follows the working directory instead of the installed
+package location. Both subject guides install the experiment dependencies and
+specify the directory containing raw NWB files. Sub-M preparation requires a
+fresh destination and its configuration generator requires a preparation receipt.
+
+CPU checks cover the existing model contracts and Full/ACT support construction
+at 4, 8, 16, and 32 trials. Final APST, Static, WF, and budget entrypoints use
+artifacts generated under the new run directory; the historical campaign is not
+an input dependency.
+
+The RNN extraction was compared directly with the original campaign on a
+seed-42 synthetic 100-slot recording. Causal windows and label normalization
+were identical. Source training (two epochs with two updates each), target
+training from scratch (four updates), and source-pretrained fine-tuning (four
+updates) produced exactly equal parameter tensors. Full-recording FP64 EMA,
+variance-weighted R², and per-output R² also matched exactly. These CPU checks
+verify the extracted computation without rerunning the full training campaigns.
+
+The RNN support adapter was also checked on the original public source
+recordings `sub-C_ses-CO-20150309` and `sub-M_ses-CO-20150511`.
+For each recording, all 4/8/16/32-trial endpoint arrays matched the original
+budget implementation exactly; M32 also matched the original cached support.
+No final recordings were scored during these checks.
+
+The combined CPU test suite passes 12 tests, including reduced RNN training,
+selection and final evaluation, seal validation for both subjects, and lazy
+final materialization after development selection. The package builds as a
+wheel; installation and CLI import checks are performed outside the source
+checkout.

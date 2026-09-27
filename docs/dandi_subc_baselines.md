@@ -9,8 +9,8 @@ not legal or whose sealed fitting retry fails are unavailable, never silently
 rank-reduced.
 
 ```bash
-python -m apst.dandi_subc.baselines select-dev --cache "$APST_SUBC_ROOT/prepared_sua" --dest "$APST_SUBC_ROOT/wf/selection.json"
-python -m apst.dandi_subc.baselines score-final --seal "$APST_SUBC_ROOT/final/selection_seal.json" --final-cache "$APST_SUBC_ROOT/final/core/final_cache" --final-receipt "$APST_SUBC_ROOT/final/core/final_cache_receipt.json" --selection "$APST_SUBC_ROOT/wf/selection.json" --dest "$APST_SUBC_ROOT/wf/final.json"
+$PY -m apst.dandi_subc.baselines select-dev --cache "$APST_SUBC_ROOT/prepared_sua" --dest "$APST_SUBC_ROOT/wf/selection.json"
+$PY -m apst.dandi_subc.baselines score-final --seal "$APST_SUBC_ROOT/final/selection_seal.json" --final-cache "$APST_SUBC_ROOT/final/core/final_cache" --final-receipt "$APST_SUBC_ROOT/final/core/final_cache_receipt.json" --selection "$APST_SUBC_ROOT/wf/selection.json" --dest "$APST_SUBC_ROOT/wf/final.json"
 ```
 
 Final scoring requires the neural final seal and its materialized final cache.

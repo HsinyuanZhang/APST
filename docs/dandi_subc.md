@@ -1,28 +1,31 @@
 # DANDI688 Sub-C training reproduction
 
-This release is SUA-only. Set `APST_DATA_ROOT` to the directory that contains
-DANDI 000688 Sub-C NWB files, normally `$APST_DATA_ROOT/000688/sub-C` if the
-DANDI download root is `$APST_DATA_ROOT`. Set `APST_SUBC_ROOT` to an empty
-artifact root. No template is frozen directly: `init-config` writes its local
-cache receipt binding and adjacent SHA sidecar first.
+This release is SUA-only. Install the experiment dependencies into the active
+environment first (for example, `python -m pip install ".[experiments]"`).
+Set `APST_DATA_ROOT` to the directory containing the Sub-C NWB files directly:
+`$APST_DATA_ROOT/sub-C_ses-CO-2015..._behavior+ecephys.nwb`. Set
+`APST_SUBC_ROOT` to a fresh, user-writable artifact root. No template is frozen
+directly: `init-config` writes its local cache receipt binding and adjacent SHA
+sidecar first.
 
 ```bash
 export APST_DATA_ROOT=/data/000688/sub-C
 export APST_SUBC_ROOT=$PWD/runs/dandi_subc
-python -m apst.dandi_subc prepare --cache "$APST_SUBC_ROOT/prepared_sua"
+PY=python3
+$PY -m apst.dandi_subc prepare --cache "$APST_SUBC_ROOT/prepared_sua"
 
 for name in sua_activity_pretrain_f0 sua_concat_pretrain_f0 sua_full_f0 sua_act_f0 sua_e0only_f0 sua_tokenonly_f0 sua_full_flat; do
-  python -m apst.dandi_subc init-config --template "examples/dandi_subc/${name}.json" --cache "$APST_SUBC_ROOT/prepared_sua" --dest "$APST_SUBC_ROOT/configs/${name}.json"
+  $PY -m apst.dandi_subc init-config --template "examples/dandi_subc/${name}.json" --cache "$APST_SUBC_ROOT/prepared_sua" --dest "$APST_SUBC_ROOT/configs/${name}.json"
 done
 
-python -m apst.dandi_subc pretrain --config "$APST_SUBC_ROOT/configs/sua_activity_pretrain_f0.json" --dest "$APST_SUBC_ROOT/pretrain_activity" --device cuda:0
-python -m apst.dandi_subc pretrain --config "$APST_SUBC_ROOT/configs/sua_concat_pretrain_f0.json" --dest "$APST_SUBC_ROOT/pretrain_concat" --device cuda:0
+$PY -m apst.dandi_subc pretrain --config "$APST_SUBC_ROOT/configs/sua_activity_pretrain_f0.json" --dest "$APST_SUBC_ROOT/pretrain_activity" --device cuda:0
+$PY -m apst.dandi_subc pretrain --config "$APST_SUBC_ROOT/configs/sua_concat_pretrain_f0.json" --dest "$APST_SUBC_ROOT/pretrain_concat" --device cuda:0
 
-python -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_act_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_activity/encoder.pt" --dest "$APST_SUBC_ROOT/act_f0" --device cuda:0
-python -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_tokenonly_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_activity/encoder.pt" --dest "$APST_SUBC_ROOT/tokenonly_f0" --device cuda:0
-python -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_full_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/full_f0" --device cuda:0
-python -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_e0only_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/e0only_f0" --device cuda:0
-python -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_full_flat.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/full_flat" --device cuda:0
+$PY -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_act_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_activity/encoder.pt" --dest "$APST_SUBC_ROOT/act_f0" --device cuda:0
+$PY -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_tokenonly_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_activity/encoder.pt" --dest "$APST_SUBC_ROOT/tokenonly_f0" --device cuda:0
+$PY -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_full_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/full_f0" --device cuda:0
+$PY -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_e0only_f0.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/e0only_f0" --device cuda:0
+$PY -m apst.dandi_subc stage2 --config "$APST_SUBC_ROOT/configs/sua_full_flat.json" --encoder "$APST_SUBC_ROOT/pretrain_concat/encoder.pt" --dest "$APST_SUBC_ROOT/full_flat" --device cuda:0
 ```
 
 The activity pretrain is shared by ACT and token-only; concat pretrain is

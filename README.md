@@ -6,7 +6,8 @@ benchmark and on [DANDI 000688](https://dandiarchive.org/dandiset/000688/0.25012
 SUA reaching recordings. The DANDI688 experiment code includes source pretraining,
 frozen-encoder decoder training, development selection, held-out evaluation,
 association-profile controls, and calibration-budget evaluation for **Sub-C**
-and **Sub-M**. FALCON download and loading utilities remain available.
+and **Sub-M**, including a FALCON-derived RNN comparison. FALCON download and
+loading utilities remain available.
 
 ## Data
 
@@ -134,3 +135,28 @@ not results of a new training run performed by installing this package.
 and pooled-carrier FiLM. `apst.legacy_dandi` contains the shared DANDI loading and
 profile utilities; `apst.dandi_subc` and `apst.dandi_subm` preserve the two
 experiment protocols separately.
+
+## RNN comparison on the same DANDI splits
+
+The [RNN reproduction guide](docs/dandi_rnn.md) covers source training,
+zero-shot transfer, supervised training from scratch on each target session,
+and fine-tuning a source-trained model. The calibration-budget comparison uses
+4, 8, 16, and 32 labeled trials. Development selection precedes final evaluation;
+final outputs retain per-session scores and checkpoint bindings.
+
+The RNN architecture follows the movement-decoding baseline in
+[FALCON (NeurIPS 2024), Appendix A.4.2](https://papers.neurips.cc/paper_files/paper/2024/file/8c2e6bb15be1894b8fb4e0f9bcad1739-Paper-Datasets_and_Benchmarks_Track.pdf).
+The guide documents the reference implementation and the DANDI training and
+calibration protocol. APST and ACT-only use frozen target-session inference;
+RNN fine-tuning updates the source-trained model using target calibration labels.
+
+## Reproduction checks
+
+```bash
+python -m pip install -e ".[experiments,test]"
+python -m pytest -q
+```
+
+See [release validation](docs/release_validation.md) for the checks performed on
+this code release. Historical numerical references and freshly generated run
+receipts are kept separate.

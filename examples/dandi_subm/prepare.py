@@ -5,11 +5,15 @@ from apst.dandi_subm import protocol
 from apst.dandi_subm.subm_data import load_pair, save_session
 def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
 def main():
- dest=protocol.output_root()/'prepared_sua'; dest.mkdir(parents=True,exist_ok=True)
+ dest=protocol.output_root()/'prepared_sua'
+ if dest.exists(): raise FileExistsError('prepare destination must be fresh: '+str(dest))
+ raw=protocol.raw_root()
+ if not raw.is_dir(): raise FileNotFoundError('APST_DATA_ROOT must name the Sub-M NWB directory: '+str(raw))
+ dest.mkdir(parents=True)
  rows={}
  for split,ids,purpose in [('train',protocol.TRAIN_SESSIONS,'source'),('dev',protocol.DEV_SESSIONS,'development')]:
   for sid in ids:
-   rec=load_pair(sid,purpose=purpose)['sua']; path=dest/f'{sid}.sua.npz'; save_session(rec,path)
+   rec=load_pair(sid,raw_root=raw,purpose=purpose)['sua']; path=dest/f'{sid}.sua.npz'; save_session(rec,path)
    rows[sid]={'split':split,'file':path.name,'sha256':sha(path),'channels':int(rec.neural.shape[1]),'legal_trials':len(rec.metadata['raw_trial_rows']),'direction_design_rank':rec.metadata['direction_design_rank'],'finite_direction_count':rec.metadata['finite_direction_count'],'m1_only':True}
  # Final is metadata/schema audited only; raw neural/query/velocity are never materialized here.
  final=[]

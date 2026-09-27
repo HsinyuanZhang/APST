@@ -8,7 +8,18 @@ PACKAGE = Path(__file__).resolve().parent
 PROJECT = PACKAGE.parents[2]
 
 def output_root() -> Path:
-    return Path(os.environ.get("APST_SUBC_ROOT", PROJECT / "runs" / "dandi_subc")).expanduser().resolve()
+    """Return a user-writable artifact root in both checkout and wheel installs.
+
+    A package-installed ``__file__`` lives below ``site-packages``.  Falling
+    back to a path derived from it made an omitted environment variable point
+    at an installation directory, which is commonly read-only and is not a
+    campaign workspace.  The documented ``APST_SUBC_ROOT`` remains the
+    reproducible explicit setting; the fallback is only a portable local
+    convenience.
+    """
+    return Path(
+        os.environ.get("APST_SUBC_ROOT", Path.cwd() / "runs" / "dandi_subc")
+    ).expanduser().resolve()
 
 def data_root() -> Path:
     return Path(resolve_data_root()).resolve()

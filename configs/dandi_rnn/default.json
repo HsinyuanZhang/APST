@@ -1,0 +1,20 @@
+{
+  "schema": "dandi_rnn_config_v1",
+  "seed": 42,
+  "representation": "SUA: original sorted-unit order, right-zero-padded to 100; no persistent unit identity",
+  "architecture": "nn.LSTM(100, hidden, 1, batch_first=True) + Linear(hidden, 2)",
+  "causal_window_bins": 50,
+  "bin_seconds": 0.02,
+  "batch": 128,
+  "source_hps": [[128, 0.0001], [128, 0.0003], [128, 0.0005], [256, 0.0001], [256, 0.0003], [256, 0.0005]],
+  "source_epochs": 20,
+  "source_updates_per_epoch": 256,
+  "scratch_hps": [[128, 0.0001], [128, 0.0003], [128, 0.0005], [256, 0.0001], [256, 0.0003], [256, 0.0005]],
+  "scratch_eval_epochs": [1, 2, 5, 10, 20, 40, 80, 120, 160, 200],
+  "scratch_updates_per_epoch": 16,
+  "finetune_lrs": [0.00001, 0.00003, 0.0001, 0.0003],
+  "finetune_steps": [0, 16, 32, 64, 128, 256, 512],
+  "target_budgets": [4, 8, 16, 32],
+  "selection": "equal-session mean development R2; supplied order breaks exact ties; freeze before final access",
+  "scoring": "full-recording causal EMA p[t]=p[t-1]/3+2*raw[t]/3, reset every session; R2 at query endpoints"
+}

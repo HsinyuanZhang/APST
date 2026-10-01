@@ -1,0 +1,13 @@
+{
+  "cpu_threads": 2,
+  "device": "cpu",
+  "max_abs": 4.743924364447594e-09,
+  "ms_per_bin": 43.79910267653031,
+  "parity_bins": 32,
+  "query_truth_accessed": false,
+  "schema": "apst_h1_ladder_x2_s44_ring_export_v1",
+  "status": "PASS_NONFORMAL_NOT_SUBMITTABLE",
+  "tag": "S0_set_1",
+  "timing_bins": 256,
+  "tolerance": 1e-05
+}

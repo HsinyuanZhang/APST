@@ -1,0 +1,12 @@
+{
+  "task": "M1",
+  "id": 583237,
+  "epoch": 2,
+  "seed": 42,
+  "image_tag": "m1-ladder-x16-film-m4-s42-public:v1",
+  "image_id": "sha256:7cc6fec3e00c8ca924b1f25856b39c404313357531e33c8f18f635b11dced459",
+  "payload_manifest_sha256": "04a17a874fff68b8049672d115d494fa11305d707950e7030861140588920072",
+  "source_checkpoint_sha256": "fc753c88fc70df22b7d4dea25017c0074e12ee211b656e0cc3d1b679a12771e0",
+  "packaged_selected_ema_decoder_sha256": "0ef34045cd73271dd5fbaeb578c1e49925eda92c5e61fb165e419ede99035be1",
+  "official_HOmean": 0.6541798272722487
+}

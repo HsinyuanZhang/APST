@@ -1,0 +1,1482 @@
+{
+  "arm": "F_nope_learned",
+  "candidate": "E-noPE-frozen-pretrained-A",
+  "candidate_selection": {
+    "full_ext6_score_receipt": true,
+    "metric": "per-session centered variance-weighted R2, unweighted six-session mean",
+    "rule": "fixed output EMA alpha=1/3; earliest finite maximum across all 24 epochs",
+    "selected_checkpoint_replay_verified": true,
+    "selected_checkpoint_sha256": "f445ef8538df87f301a727744f4e8fafd85de8859757f2c73729b8c52e286d7c",
+    "selected_epoch": 9,
+    "selected_score": 0.3762134398233958,
+    "split": "FALCON M2 EXT6 development"
+  },
+  "candidate_slug": "m2_pretrained_E_nope_frozen_A_fixed_third_v1",
+  "dynamic_bank": {
+    "frozen_eight_from_checkpoint": true,
+    "legal_support_sessions": 13,
+    "selected_shared_film": true,
+    "support_manifest_sha256": "f51e0f5e902d5a7f28537ec4177af2a4d0a2804ccd2f15e1371282b4d606b950"
+  },
+  "final_decoder": {
+    "checkpoint_epoch": 7,
+    "checkpoint_sha256": "db0896f501008ad0517e081e466e11081804f25a1c5227fb77032beacc07cc35",
+    "dynamic_shared_film_e0": true,
+    "selected_checkpoint_replay_verified": true,
+    "selected_score": 0.40077853528635243
+  },
+  "legal_m33_allowlist": {
+    "no_query_arrays_or_labels_read": true,
+    "path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/configs/submissions/m2_legal_m33_calibration_allowlist_v1.json",
+    "schema": "apst_m2_legal_m33_calibration_allowlist_v1",
+    "session_count": 13,
+    "sha256": "7c22e3d485a2d47f4ce4c2c1456bfbc2d7f60466bb0ff9fad65a7616cf7eba6c",
+    "trial_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32
+    ]
+  },
+  "m2_F_film_export_v1": {
+    "formal_selected": true,
+    "schema": "apst_m2_F_film_export_v1",
+    "shared_film_dynamic_E0": true
+  },
+  "output_ema": {
+    "alpha": 0.3333333333333333,
+    "inference_only": true,
+    "session_reset": true,
+    "state_0": "pred_0",
+    "training_included": false,
+    "weight_ema_decay": 0.9995,
+    "weight_ema_is_distinct": true
+  },
+  "payload_files_sha256": {
+    "calibration/ses-2020-10-19-Run1/E0.npy": "20063eca04b7a71375777f58ec428a0bbc0b8887ac0cdd2db3cab287ef8d10c8",
+    "calibration/ses-2020-10-19-Run1/carrier.npy": "48bd5e72a19e4e4b22a24878ec05b628fc02843d0eeef15e3c74d45cf8355b28",
+    "calibration/ses-2020-10-19-Run2/E0.npy": "4df9e7aaeea85bc7e3bb1eb6d1fdc3a1523295591e43947f2bd664402c54b334",
+    "calibration/ses-2020-10-19-Run2/carrier.npy": "f23761e3e1d1f2d880aac84695b2a7030fbbfa178fe816c4e36ae9eb5b40554b",
+    "calibration/ses-2020-10-20-Run1/E0.npy": "a69934e8641cce913a79bf7bc0c5be605499574e8fab1c14b345e6f20a069af3",
+    "calibration/ses-2020-10-20-Run1/carrier.npy": "8c13248ccbf0e49c096c72331d6a8efb472264825ef67f0521dcd798ea0730ad",
+    "calibration/ses-2020-10-20-Run2/E0.npy": "4086aaa8fbfde51d5c254e7abcb7763a82fa56894c906aa05d096976702dc5eb",
+    "calibration/ses-2020-10-20-Run2/carrier.npy": "512b66a5a0bf8bf8e9e829732630fca1ef50c395930c80dea57b8e4465ff404a",
+    "calibration/ses-2020-10-27-Run1/E0.npy": "4a2adf4fbc4b269ec3e2c927af940fede6cf280fbd7ba560ec4a254217778d07",
+    "calibration/ses-2020-10-27-Run1/carrier.npy": "3a3aef4803a8988fd40383ae0607d85eb7b1b069dcda6edaa4ebc9eb6e33431e",
+    "calibration/ses-2020-10-27-Run2/E0.npy": "fe41d2f1772afba651af613bc7e71f3b5fcb5f02fe5a930bcc6f7af427223f01",
+    "calibration/ses-2020-10-27-Run2/carrier.npy": "6b7141380c181d02c67bbfde10e2a9b87a25d9e1ef33cd2ba639966e15fb65c5",
+    "calibration/ses-2020-10-28-Run1/E0.npy": "59390c47f1fc09f040319c36de52c222d5fe5d5c35a2f1183a297244d7255f51",
+    "calibration/ses-2020-10-28-Run1/carrier.npy": "04760cce88dc69d085bffa2963500339aa4241602fb49045876226c6ea91affd",
+    "calibration/ses-2020-10-30-Run1/E0.npy": "6de1562afd36fcfc15f5122699f09a07055806c36f37cb3ded122c455f594a51",
+    "calibration/ses-2020-10-30-Run1/carrier.npy": "3cc9383b4560741525c5f95652cf874bb784ed599de64b346268f5d3f95aa543",
+    "calibration/ses-2020-10-30-Run2/E0.npy": "53d934e3fba917dc1eb0cf82bab9cd4c0225e36e307e568726bf7e8c575a3b95",
+    "calibration/ses-2020-10-30-Run2/carrier.npy": "72bdbeceefccb17ce574a3d1f41965ff23a54f23db886cc4ba179c45d50796fa",
+    "calibration/ses-2020-11-18-Run1/E0.npy": "686dd6ebf259ca9278b13cba11214d811ddcdfcae4d6c4715aba165a426d6dee",
+    "calibration/ses-2020-11-18-Run1/carrier.npy": "c37f52b48746f3d6d277cb41451993d8c6cc2ff839e1a9ba65416534ce605b57",
+    "calibration/ses-2020-11-19-Run1/E0.npy": "2b1e735dcc59e92dd8917dc44febada553b189343f6aaaa2168ada05967bc176",
+    "calibration/ses-2020-11-19-Run1/carrier.npy": "464154591e730dd47f456e1a4a55a2053eefdb33f9d58946ddd30a7392d0910b",
+    "calibration/ses-2020-11-24-Run1/E0.npy": "1972e77e9bbaaef3baab5de36fdbc05639124c9e58929557d401a60293b315d7",
+    "calibration/ses-2020-11-24-Run1/carrier.npy": "689437ffb3d205f24bfd6886254cf15235b147eba5493efdf7fa0c6d525fd8bb",
+    "calibration/ses-2020-11-24-Run2/E0.npy": "e75486738c79a8c5c755d68c526b5c370d0fbe27bbeb4133a1c210f191bbe25c",
+    "calibration/ses-2020-11-24-Run2/carrier.npy": "235bec8631511629d64d611ffea3159acf66d6264cf7ad2fdb64ccbb10d95162",
+    "decoder.py": "27dc8b82dcdefca83e7b3fd78e50db3698f5951920fa0c8cc9ea5162b2e1fb08",
+    "frozen_allowlist.json": "7c22e3d485a2d47f4ce4c2c1456bfbc2d7f60466bb0ff9fad65a7616cf7eba6c",
+    "m2_f_runtime_v1.py": "5d27f151a8546fe9c5c528607dd3c06711c311f7303185cc23fa9cc8e24da852",
+    "selected_ema_decoder.pt": "d1e9d9cbeef3f35cc82f4a967f87e4f7eb49d7b56f1e4c801752bd4d31dc3b7b",
+    "temporal_v1.py": "a0dbbd0fad30668a754c25bd0bc5aae6c6fe7c975ec94600e6f9be540d359dc0"
+  },
+  "provenance_disclosure": {
+    "historical_clean_source_only_chain_claim": false,
+    "historical_teacher_fit_scope": "UNKNOWN",
+    "no_query_truth_fitting": true,
+    "source_producer_no_query_arrays_or_labels_read_scope": "payload materialization/export only; source training and public dev scoring receipts are retained as provenance",
+    "source_training_scope": "formal source_train supervised producer training is retained as provenance; export and target parameters are not updated"
+  },
+  "runtime_input": {
+    "absolute_position_contract": "A_flat offline windows use padded_window_start - 49 + arange(50); E_nope_flat explicitly disables PE; streaming resets core state at each session",
+    "cpu": {
+      "dtype": "float32",
+      "interop_threads": 1,
+      "intra_threads": 1
+    },
+    "operation": "identity float32; observed [B,96] enters raw5/frontend directly",
+    "output_scale": "inference EMA is applied to decoder score; resulting state is divided by 5 to native M2 units",
+    "padding": "negative absolute positions are left-padding metadata and valid mask excludes them before temporal KV",
+    "raw_history": "causal k=5; reset-filled left history"
+  },
+  "schema": "apst_m2_f_export_v1_payload",
+  "seed": 42,
+  "selection": {
+    "epoch": 7,
+    "formal": true,
+    "run": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/runs/falcon/pretrained_m2_film/joint_F_s42_v1",
+    "score": 0.40077853528635243
+  },
+  "sessions": {
+    "ses-2020-10-19-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201019",
+      "official_tag_stem": "Run1_20201019",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "23753593d9918e8dcf695aaa6c342e478dcd913f1b31cc290ab948e39cdb45ed",
+          "path": "calibration/ses-2020-10-19-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "e698b9ef300ca5a654b37a500bf7a9f374f842bf0cc20a32cf598c92ae4bab96"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "48bd5e72a19e4e4b22a24878ec05b628fc02843d0eeef15e3c74d45cf8355b28",
+          "path": "calibration/ses-2020-10-19-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "6e190583651c7caa179aac9e5e74c7f67f124a7aaedcc88057a27d704bb7e46b"
+        }
+      },
+      "payload_carrier_file_sha256": "48bd5e72a19e4e4b22a24878ec05b628fc02843d0eeef15e3c74d45cf8355b28",
+      "payload_carrier_typed_sha256": "6e190583651c7caa179aac9e5e74c7f67f124a7aaedcc88057a27d704bb7e46b",
+      "payload_e0_file_sha256": "20063eca04b7a71375777f58ec428a0bbc0b8887ac0cdd2db3cab287ef8d10c8",
+      "payload_e0_typed_sha256": "16fc14a562d7d42ee595af7162677ed19cf2c8db4ff7d361eb507469955267a1",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-19-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "23753593d9918e8dcf695aaa6c342e478dcd913f1b31cc290ab948e39cdb45ed",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-19-Run1/E0.npy",
+          "source_typed_sha256": "e698b9ef300ca5a654b37a500bf7a9f374f842bf0cc20a32cf598c92ae4bab96"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "48bd5e72a19e4e4b22a24878ec05b628fc02843d0eeef15e3c74d45cf8355b28",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-19-Run1/carrier.npy",
+          "source_typed_sha256": "6e190583651c7caa179aac9e5e74c7f67f124a7aaedcc88057a27d704bb7e46b"
+        }
+      },
+      "support_activity_sha256": "9dc100516ae47bfa0853ff06e7e078c10c5d4de62c088bcf50ac302632d5f409",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-19-Run2": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run2_20201019",
+      "official_tag_stem": "Run2_20201019",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "cee45077d44210a011525184eb1c6c020f99d044d880e53c4c3b78d2a0775e7c",
+          "path": "calibration/ses-2020-10-19-Run2/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "19a81311cc4336f2b9038c4b5bbbd772e792444afeb253e4dd490129583e4a46"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "f23761e3e1d1f2d880aac84695b2a7030fbbfa178fe816c4e36ae9eb5b40554b",
+          "path": "calibration/ses-2020-10-19-Run2/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "fb080da6eecc3503b927774bd2764d0d80e89ca2e769650fb0aa382730e800c2"
+        }
+      },
+      "payload_carrier_file_sha256": "f23761e3e1d1f2d880aac84695b2a7030fbbfa178fe816c4e36ae9eb5b40554b",
+      "payload_carrier_typed_sha256": "fb080da6eecc3503b927774bd2764d0d80e89ca2e769650fb0aa382730e800c2",
+      "payload_e0_file_sha256": "4df9e7aaeea85bc7e3bb1eb6d1fdc3a1523295591e43947f2bd664402c54b334",
+      "payload_e0_typed_sha256": "89a0a61d7fed0737984c1d516e0f6b6615c954ca080c31d5acdd7c14a70fea5d",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-19-Run2",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "cee45077d44210a011525184eb1c6c020f99d044d880e53c4c3b78d2a0775e7c",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-19-Run2/E0.npy",
+          "source_typed_sha256": "19a81311cc4336f2b9038c4b5bbbd772e792444afeb253e4dd490129583e4a46"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "f23761e3e1d1f2d880aac84695b2a7030fbbfa178fe816c4e36ae9eb5b40554b",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-19-Run2/carrier.npy",
+          "source_typed_sha256": "fb080da6eecc3503b927774bd2764d0d80e89ca2e769650fb0aa382730e800c2"
+        }
+      },
+      "support_activity_sha256": "38dbd99a5e54b0a18f7a8f1e3e94d08103a83c3df101acc84d864b9ed80d3a80",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-20-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201020",
+      "official_tag_stem": "Run1_20201020",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "3c73163a4f95878a1e49a640000ebcfa08045af9c38ac2ed56ceda30cf97b2f9",
+          "path": "calibration/ses-2020-10-20-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "cbbdca82ce66770673b23bcfe7bee8fe4ee537856f88b9545cb162e70d7b0c3f"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "8c13248ccbf0e49c096c72331d6a8efb472264825ef67f0521dcd798ea0730ad",
+          "path": "calibration/ses-2020-10-20-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "96d89c698fba88aa49b645436fc03c3e4f875c5c2cde0cbfa845c2c15805e3c8"
+        }
+      },
+      "payload_carrier_file_sha256": "8c13248ccbf0e49c096c72331d6a8efb472264825ef67f0521dcd798ea0730ad",
+      "payload_carrier_typed_sha256": "96d89c698fba88aa49b645436fc03c3e4f875c5c2cde0cbfa845c2c15805e3c8",
+      "payload_e0_file_sha256": "a69934e8641cce913a79bf7bc0c5be605499574e8fab1c14b345e6f20a069af3",
+      "payload_e0_typed_sha256": "4c37acb22abc64b13f805f0f6172c8c7b4a18ccdf203b7469d258c46097ce8f4",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-20-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "3c73163a4f95878a1e49a640000ebcfa08045af9c38ac2ed56ceda30cf97b2f9",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-20-Run1/E0.npy",
+          "source_typed_sha256": "cbbdca82ce66770673b23bcfe7bee8fe4ee537856f88b9545cb162e70d7b0c3f"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "8c13248ccbf0e49c096c72331d6a8efb472264825ef67f0521dcd798ea0730ad",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-20-Run1/carrier.npy",
+          "source_typed_sha256": "96d89c698fba88aa49b645436fc03c3e4f875c5c2cde0cbfa845c2c15805e3c8"
+        }
+      },
+      "support_activity_sha256": "26173983ad09f5e1f8c73590579f0bf539a00062ad0191a53633dfc33b723a6c",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-20-Run2": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run2_20201020",
+      "official_tag_stem": "Run2_20201020",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "3095ad0c0cef6347e95bc6543ae3efa267bdffc0ee8343f693637590c4b1aacd",
+          "path": "calibration/ses-2020-10-20-Run2/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "7c1d258d22912c61ac946170ac96e164301be90d759b282df54c2d311b4dbe03"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "512b66a5a0bf8bf8e9e829732630fca1ef50c395930c80dea57b8e4465ff404a",
+          "path": "calibration/ses-2020-10-20-Run2/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "ad7d2380737a1877615cac2bdcf8a160ecb66692d4be339da82c5d042dc48646"
+        }
+      },
+      "payload_carrier_file_sha256": "512b66a5a0bf8bf8e9e829732630fca1ef50c395930c80dea57b8e4465ff404a",
+      "payload_carrier_typed_sha256": "ad7d2380737a1877615cac2bdcf8a160ecb66692d4be339da82c5d042dc48646",
+      "payload_e0_file_sha256": "4086aaa8fbfde51d5c254e7abcb7763a82fa56894c906aa05d096976702dc5eb",
+      "payload_e0_typed_sha256": "b2e9f7e8d83c73fa5ebb39ae5a3fc01d992357b0578f97c7c09cedbfde134b6c",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-20-Run2",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "3095ad0c0cef6347e95bc6543ae3efa267bdffc0ee8343f693637590c4b1aacd",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-20-Run2/E0.npy",
+          "source_typed_sha256": "7c1d258d22912c61ac946170ac96e164301be90d759b282df54c2d311b4dbe03"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "512b66a5a0bf8bf8e9e829732630fca1ef50c395930c80dea57b8e4465ff404a",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-20-Run2/carrier.npy",
+          "source_typed_sha256": "ad7d2380737a1877615cac2bdcf8a160ecb66692d4be339da82c5d042dc48646"
+        }
+      },
+      "support_activity_sha256": "0c444363251528f6889b4a674659558d2be6864df8589f3743880eb30105ea1f",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-27-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201027",
+      "official_tag_stem": "Run1_20201027",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "82cbe669f0069ee29d8ee55d4b036d395be4a50a785d477d21a42976eb27efe2",
+          "path": "calibration/ses-2020-10-27-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "f1615589e79291029ca29de7e0bf4b87a26e72ad5a59d074f6ca4c7dbf2aa2cc"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "3a3aef4803a8988fd40383ae0607d85eb7b1b069dcda6edaa4ebc9eb6e33431e",
+          "path": "calibration/ses-2020-10-27-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "f1c0cbd94e5f105010c9f5c77e2fe701084c8caf385d6876b1a490ac91838049"
+        }
+      },
+      "payload_carrier_file_sha256": "3a3aef4803a8988fd40383ae0607d85eb7b1b069dcda6edaa4ebc9eb6e33431e",
+      "payload_carrier_typed_sha256": "f1c0cbd94e5f105010c9f5c77e2fe701084c8caf385d6876b1a490ac91838049",
+      "payload_e0_file_sha256": "4a2adf4fbc4b269ec3e2c927af940fede6cf280fbd7ba560ec4a254217778d07",
+      "payload_e0_typed_sha256": "471e9b3e7500010317917ac25323561545dd969207d759f84ca73921b9d6f687",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-27-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "82cbe669f0069ee29d8ee55d4b036d395be4a50a785d477d21a42976eb27efe2",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-27-Run1/E0.npy",
+          "source_typed_sha256": "f1615589e79291029ca29de7e0bf4b87a26e72ad5a59d074f6ca4c7dbf2aa2cc"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "3a3aef4803a8988fd40383ae0607d85eb7b1b069dcda6edaa4ebc9eb6e33431e",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-27-Run1/carrier.npy",
+          "source_typed_sha256": "f1c0cbd94e5f105010c9f5c77e2fe701084c8caf385d6876b1a490ac91838049"
+        }
+      },
+      "support_activity_sha256": "2552f03acb16a656c5dcff94af1d43a6232d30339314e919af7a0379b860fe70",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-27-Run2": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run2_20201027",
+      "official_tag_stem": "Run2_20201027",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "90edea75cb10397cec010c2e7e86405672234d2e27560e3fb141a6a840c94fdc",
+          "path": "calibration/ses-2020-10-27-Run2/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "8f14ec629ac4044791740df0e853c863e60c8234d9b82e2e190a072a14936cca"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "6b7141380c181d02c67bbfde10e2a9b87a25d9e1ef33cd2ba639966e15fb65c5",
+          "path": "calibration/ses-2020-10-27-Run2/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "9a05d3731929eaa9306ffe4953e581bb5e6e3bf8709504a03f8e0cd1d55b3c05"
+        }
+      },
+      "payload_carrier_file_sha256": "6b7141380c181d02c67bbfde10e2a9b87a25d9e1ef33cd2ba639966e15fb65c5",
+      "payload_carrier_typed_sha256": "9a05d3731929eaa9306ffe4953e581bb5e6e3bf8709504a03f8e0cd1d55b3c05",
+      "payload_e0_file_sha256": "fe41d2f1772afba651af613bc7e71f3b5fcb5f02fe5a930bcc6f7af427223f01",
+      "payload_e0_typed_sha256": "7087dee4f7f46314beee48c26de008f867bae303ba577112e7e55a3abf747ec1",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-27-Run2",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "90edea75cb10397cec010c2e7e86405672234d2e27560e3fb141a6a840c94fdc",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-27-Run2/E0.npy",
+          "source_typed_sha256": "8f14ec629ac4044791740df0e853c863e60c8234d9b82e2e190a072a14936cca"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "6b7141380c181d02c67bbfde10e2a9b87a25d9e1ef33cd2ba639966e15fb65c5",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-27-Run2/carrier.npy",
+          "source_typed_sha256": "9a05d3731929eaa9306ffe4953e581bb5e6e3bf8709504a03f8e0cd1d55b3c05"
+        }
+      },
+      "support_activity_sha256": "b71dd64cb4bf8130312790bd3a6144703e1ffb870a18d92f71e1b2ca9974cbf4",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-28-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201028",
+      "official_tag_stem": "Run1_20201028",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "9f3fed66c361d261658b0f8c6b0bc1e3289a67f1fa1874c9fb275bada848cd78",
+          "path": "calibration/ses-2020-10-28-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "f978d8713e9bd9eaa30991882c1e3d2620d9d4c6f6d3c5dca8e406dc70a42210"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "04760cce88dc69d085bffa2963500339aa4241602fb49045876226c6ea91affd",
+          "path": "calibration/ses-2020-10-28-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "31c4b0b98f25421c1e525b4d755ce100cf2b5757c961e4b66be2cdbce5a2ea1f"
+        }
+      },
+      "payload_carrier_file_sha256": "04760cce88dc69d085bffa2963500339aa4241602fb49045876226c6ea91affd",
+      "payload_carrier_typed_sha256": "31c4b0b98f25421c1e525b4d755ce100cf2b5757c961e4b66be2cdbce5a2ea1f",
+      "payload_e0_file_sha256": "59390c47f1fc09f040319c36de52c222d5fe5d5c35a2f1183a297244d7255f51",
+      "payload_e0_typed_sha256": "c5f42cb637fc2f85f23783f2cd6e2ddd0a4074c08102c1192cb067472d682b83",
+      "raw_nwb": null,
+      "raw_nwb_sha256": null,
+      "selected_surface": "source_minival",
+      "selection_replay_hashes": {},
+      "session_id": "ses-2020-10-28-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "9f3fed66c361d261658b0f8c6b0bc1e3289a67f1fa1874c9fb275bada848cd78",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-28-Run1/E0.npy",
+          "source_typed_sha256": "f978d8713e9bd9eaa30991882c1e3d2620d9d4c6f6d3c5dca8e406dc70a42210"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "04760cce88dc69d085bffa2963500339aa4241602fb49045876226c6ea91affd",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/source_minival/ses-2020-10-28-Run1/carrier.npy",
+          "source_typed_sha256": "31c4b0b98f25421c1e525b4d755ce100cf2b5757c961e4b66be2cdbce5a2ea1f"
+        }
+      },
+      "support_activity_sha256": "85b131c513aa5705596e604606d35598a90ec3fef7d88d496689be87578c0d38",
+      "support_kind": "held-in-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-30-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201030",
+      "official_tag_stem": "Run1_20201030",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "03ef0740bba051ef091f92025d51cef1a0ba9f6f2b32bb67b959e140c08b0eaa",
+          "path": "calibration/ses-2020-10-30-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "d0a19ad22409a68cd37a27d7264bee888370878bf4f45e77edb7f260dbb46013"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "3cc9383b4560741525c5f95652cf874bb784ed599de64b346268f5d3f95aa543",
+          "path": "calibration/ses-2020-10-30-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "16e63d946212783e3e4c0da22846e81e6fd5f5bc20929ea04a5fed06a96e831c"
+        }
+      },
+      "payload_carrier_file_sha256": "3cc9383b4560741525c5f95652cf874bb784ed599de64b346268f5d3f95aa543",
+      "payload_carrier_typed_sha256": "16e63d946212783e3e4c0da22846e81e6fd5f5bc20929ea04a5fed06a96e831c",
+      "payload_e0_file_sha256": "6de1562afd36fcfc15f5122699f09a07055806c36f37cb3ded122c455f594a51",
+      "payload_e0_typed_sha256": "6b58df3b37ab6d4c62ad23c3e01d8ecc516e77c6c417f611936b1d641f263474",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-10-30-Run1_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "7f3a2c34684e0bcf6ea69096d7218ca24486a27402e5f07b0dc5010921595e2d",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "1d0ad9807f95286d177b4f5f725f4ead01ffa7faead0acd434e73b92a0d576f9",
+        "array_query_coordinates_sha256": "32200c25e8fb2e1fa70e0a9e6391144c573c21812a24041f2d21ca198540040b",
+        "array_raw_prediction_sha256": "a31c3f46893ffc0a87985947da43a0c914f2a1a6e9e02fe86cfa4736bdda34fb",
+        "array_truth_sha256": "eb3ba544e5ad0d23dc35cff2fd0775f1f72c13f027ca54e28d2e126bf886b4df",
+        "array_valid_mask_sha256": "70bb174f520a2fc3bdd5945e76f16935bf8fcef0c761861c6eddac5183bc1098",
+        "npz_sha256": "fb32f1aa16c2b7cfab8fcf61a9ce53475de4070af362b21f6595ec29355f2b3c",
+        "prediction_sha256": "e2525b87b805f70ef4519c3595a01ccbcd251c73dbac3a71bf2605653fa9b33d",
+        "truth_sha256": "63a617c17a32227137cbdcb77e78d335c06f24761b6b9e25ea9928464f0c8414",
+        "window_count": 2727
+      },
+      "session_id": "ses-2020-10-30-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "03ef0740bba051ef091f92025d51cef1a0ba9f6f2b32bb67b959e140c08b0eaa",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-10-30-Run1/E0.npy",
+          "source_typed_sha256": "d0a19ad22409a68cd37a27d7264bee888370878bf4f45e77edb7f260dbb46013"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "3cc9383b4560741525c5f95652cf874bb784ed599de64b346268f5d3f95aa543",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-10-30-Run1/carrier.npy",
+          "source_typed_sha256": "16e63d946212783e3e4c0da22846e81e6fd5f5bc20929ea04a5fed06a96e831c"
+        }
+      },
+      "support_activity_sha256": "dd71074dc16713a5e23f49cfb9db67798b2af88fd47ef0dccc88c239c74553d4",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-10-30-Run2": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run2_20201030",
+      "official_tag_stem": "Run2_20201030",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "9fa5c9485d1e1d79c5813ac6b1b11a4863394d433b9dd92d670a9343ad5fd377",
+          "path": "calibration/ses-2020-10-30-Run2/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "7a9f62afb553e8c079ff7cc63edffc930daa7d244658e63015c0db2792081ead"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "72bdbeceefccb17ce574a3d1f41965ff23a54f23db886cc4ba179c45d50796fa",
+          "path": "calibration/ses-2020-10-30-Run2/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "4fc608b4f858b0d0ae56463c900796403e92663b7018e864c8385fa8fbcf9d43"
+        }
+      },
+      "payload_carrier_file_sha256": "72bdbeceefccb17ce574a3d1f41965ff23a54f23db886cc4ba179c45d50796fa",
+      "payload_carrier_typed_sha256": "4fc608b4f858b0d0ae56463c900796403e92663b7018e864c8385fa8fbcf9d43",
+      "payload_e0_file_sha256": "53d934e3fba917dc1eb0cf82bab9cd4c0225e36e307e568726bf7e8c575a3b95",
+      "payload_e0_typed_sha256": "44be0633e08a95aad7ccaa45d237b76991bb75f2a9593fc1cade1131ae27c0b1",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-10-30-Run2_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "57e910fdab4f2834cdacf17b0f5888c972d1e2c75ab16c1059ae5723cd901490",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "f393950aa9abf1ebfc02501abcff357b41e800d462809b0410c7dbf2c515e62b",
+        "array_query_coordinates_sha256": "413f17b946ff7d589e02808e446fb3915ed0f0d92aaabbd3b4b6895e0d623389",
+        "array_raw_prediction_sha256": "eb77b886310f60f809359d20a6e8a35324dbc26341d5e104b15237b2c022f07a",
+        "array_truth_sha256": "369ef52601cdb078ec7abb6b48d9990c34584f60047e784d9acf149e64c4b8fe",
+        "array_valid_mask_sha256": "1c785a6d926ad3c8915941849e6b6b4f329f5f355ed1d9aa6ebe9486ba088070",
+        "npz_sha256": "32220e8e6fbb5ff39f2b26f409f9fafbef778accb9752b5272cb38e44ce3aaa1",
+        "prediction_sha256": "c31617a6e609cac9a572dbe3614058c94ee19fbd1f34eff02d17eb43bc757fca",
+        "truth_sha256": "1597f0e99ef2f820f9942498aff113e9145de6cc62d63e6721136955830559c0",
+        "window_count": 2550
+      },
+      "session_id": "ses-2020-10-30-Run2",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "9fa5c9485d1e1d79c5813ac6b1b11a4863394d433b9dd92d670a9343ad5fd377",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-10-30-Run2/E0.npy",
+          "source_typed_sha256": "7a9f62afb553e8c079ff7cc63edffc930daa7d244658e63015c0db2792081ead"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "72bdbeceefccb17ce574a3d1f41965ff23a54f23db886cc4ba179c45d50796fa",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-10-30-Run2/carrier.npy",
+          "source_typed_sha256": "4fc608b4f858b0d0ae56463c900796403e92663b7018e864c8385fa8fbcf9d43"
+        }
+      },
+      "support_activity_sha256": "9ef79a93bc3c904dd55580fd793a53c0b7b01fbfb7e5a6cb7d05e4391291b735",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-11-18-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201118",
+      "official_tag_stem": "Run1_20201118",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "db0510070e621a5bef1196f1174b0880acbdab01dce55bb9207af99dc6912195",
+          "path": "calibration/ses-2020-11-18-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "3acb373bab6dfd9c6c1238d670c5907c3b0815fbc1fb79c0aef9d65733e3e554"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "c37f52b48746f3d6d277cb41451993d8c6cc2ff839e1a9ba65416534ce605b57",
+          "path": "calibration/ses-2020-11-18-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "5578cb252298bc928172ade8f175e32ad63a57463e2551357fd74513d5e75bf4"
+        }
+      },
+      "payload_carrier_file_sha256": "c37f52b48746f3d6d277cb41451993d8c6cc2ff839e1a9ba65416534ce605b57",
+      "payload_carrier_typed_sha256": "5578cb252298bc928172ade8f175e32ad63a57463e2551357fd74513d5e75bf4",
+      "payload_e0_file_sha256": "686dd6ebf259ca9278b13cba11214d811ddcdfcae4d6c4715aba165a426d6dee",
+      "payload_e0_typed_sha256": "3efb99407545af5d36b0b16dd0b790226648249bc4d6edf8cde113b435c576d2",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-11-18-Run1_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "1f7e27989f0a2ec58d3d8c4b3cadb482c136c647934514d91476e14d1658e25e",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "9e5aebdd266416a551f3e2f194953977d7ed50fafe04ac35f41730ee945ca43e",
+        "array_query_coordinates_sha256": "6cb9134ead5e20ddb4afc84dd7167267d7fc9663a35d76e5fe25a3199776f20c",
+        "array_raw_prediction_sha256": "dcd15094a8cd1fa38553e049a7f8e9c41aa96ebc40efe3d4f974fbd781ee7f24",
+        "array_truth_sha256": "ae544e9d437c66b2c1f84fff56a4fcdf131d66e656c9cc7ba4d5704b8e06da8c",
+        "array_valid_mask_sha256": "50391a938e342c1cbfcc813f8f6e7f3aa3b419533a68d21a488e8679dd4c0a4a",
+        "npz_sha256": "e374ae2aaa00e82e78b8f45cd89a2130e527a1647b36d14964266f92e567913a",
+        "prediction_sha256": "edd5f2a17974a3702e1ce4842f86d1f63024612e82b6a2b078c997fcccd06f8c",
+        "truth_sha256": "7b035dffcfc5482849e9028198360668ea8f10dcfa3d5d5f8f4172baca8b154f",
+        "window_count": 2517
+      },
+      "session_id": "ses-2020-11-18-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "db0510070e621a5bef1196f1174b0880acbdab01dce55bb9207af99dc6912195",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-18-Run1/E0.npy",
+          "source_typed_sha256": "3acb373bab6dfd9c6c1238d670c5907c3b0815fbc1fb79c0aef9d65733e3e554"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "c37f52b48746f3d6d277cb41451993d8c6cc2ff839e1a9ba65416534ce605b57",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-18-Run1/carrier.npy",
+          "source_typed_sha256": "5578cb252298bc928172ade8f175e32ad63a57463e2551357fd74513d5e75bf4"
+        }
+      },
+      "support_activity_sha256": "44551625bd65e56c8e6987edd65a58e6f6d582249ae38be484e8bbf59822fc9c",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-11-19-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201119",
+      "official_tag_stem": "Run1_20201119",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "ecdf4eedc7472129c181508e155d62c08aa030a4e497a457dbc2d8ed453d91ca",
+          "path": "calibration/ses-2020-11-19-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "5ad3dab1569cbe55ab216b3e46df535b376ec63c501b34c3a73d2ccace391b65"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "464154591e730dd47f456e1a4a55a2053eefdb33f9d58946ddd30a7392d0910b",
+          "path": "calibration/ses-2020-11-19-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "889c47586e868f7b2037a7a2bdf889487ac13af9049800fc08cc59fe2be8f079"
+        }
+      },
+      "payload_carrier_file_sha256": "464154591e730dd47f456e1a4a55a2053eefdb33f9d58946ddd30a7392d0910b",
+      "payload_carrier_typed_sha256": "889c47586e868f7b2037a7a2bdf889487ac13af9049800fc08cc59fe2be8f079",
+      "payload_e0_file_sha256": "2b1e735dcc59e92dd8917dc44febada553b189343f6aaaa2168ada05967bc176",
+      "payload_e0_typed_sha256": "6927dc81fae1ba7a39d4123a0405e98f2ab7198ba4667a111adce1c18433f47a",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-11-19-Run1_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "d621a056947723d4ac50b70d0b8688f456f0a046ed2a97c15cd77962e142c83d",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "6940524c807a0cd71667ad647149840ccc9d24ed42b171f51d6af88f6b0438d1",
+        "array_query_coordinates_sha256": "e56b2437a98a93c200abe72da0e5ee6b27cdb712f34904b505bd65209a44744a",
+        "array_raw_prediction_sha256": "6269e8a40938fcd243c560c0e49893aab67d1dcc6a57cd663336ccc46a9d9b5b",
+        "array_truth_sha256": "241ea630e51fc6db9a931d2cd322ec93fea00698ff8d3555058726d5b61ea7a0",
+        "array_valid_mask_sha256": "0ffdd248cbeda693ad86c53adb602a0d4cde8057d5379fdeac8da3aec0d0f4b1",
+        "npz_sha256": "1056143b3720ffc5199eb9ac778b0e295f17d688a19920c76a888f7a9389778f",
+        "prediction_sha256": "9f99c879f0d56a60dacf218d114903a6404836ac9a42f147c8faf069ca04bed3",
+        "truth_sha256": "446d11425d856234404f98d9adf60d768c74d85792236f35c227c2acfa40a2e5",
+        "window_count": 3045
+      },
+      "session_id": "ses-2020-11-19-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "ecdf4eedc7472129c181508e155d62c08aa030a4e497a457dbc2d8ed453d91ca",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-19-Run1/E0.npy",
+          "source_typed_sha256": "5ad3dab1569cbe55ab216b3e46df535b376ec63c501b34c3a73d2ccace391b65"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "464154591e730dd47f456e1a4a55a2053eefdb33f9d58946ddd30a7392d0910b",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-19-Run1/carrier.npy",
+          "source_typed_sha256": "889c47586e868f7b2037a7a2bdf889487ac13af9049800fc08cc59fe2be8f079"
+        }
+      },
+      "support_activity_sha256": "1af4853f0e5920a3697fb10c4d705fdf7e855f305a56c237f72f718aff7c1831",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-11-24-Run1": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run1_20201124",
+      "official_tag_stem": "Run1_20201124",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "6d20972d6940a0b1cc3d511f3e26c4470a541282460f2fcc2fbab33cf4646938",
+          "path": "calibration/ses-2020-11-24-Run1/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "aab447c1c5c7078bf76dc62982011003fec4b778d543ac478fb00a22aa28d0a0"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "689437ffb3d205f24bfd6886254cf15235b147eba5493efdf7fa0c6d525fd8bb",
+          "path": "calibration/ses-2020-11-24-Run1/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "e4daf14928815b76d747c209b999e4ec168d23a576d8f5f3566546199e474766"
+        }
+      },
+      "payload_carrier_file_sha256": "689437ffb3d205f24bfd6886254cf15235b147eba5493efdf7fa0c6d525fd8bb",
+      "payload_carrier_typed_sha256": "e4daf14928815b76d747c209b999e4ec168d23a576d8f5f3566546199e474766",
+      "payload_e0_file_sha256": "1972e77e9bbaaef3baab5de36fdbc05639124c9e58929557d401a60293b315d7",
+      "payload_e0_typed_sha256": "cf2cc9d8e78f891188484e99a8f0a7dc201c7a3a9f94542e2e71834fc0163b18",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-11-24-Run1_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "0f8e3c6fc3afbecfc623626f19ee30c4a0f0008b475a4c0d06065d326d69ff7d",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "ebb944ff934cff4dbe10be75eead93e43f312e928f192821cfc8ef3099165c0e",
+        "array_query_coordinates_sha256": "6df64befddf662c32212a0e9799fc4f37fffc5254f2fd28baa3275383fc50a0d",
+        "array_raw_prediction_sha256": "427a993880215a4fa3ff36d80c75f5026da2fd3e345592c256dfe654182f039d",
+        "array_truth_sha256": "1c86a3ddb924d2834d50fc1ebb7d776f9c6e1c0b86d7dc0c878d49637cde451c",
+        "array_valid_mask_sha256": "e48950c91d5cc7905506601bb926d8807a2250713240a280dc1dd1c6b9768884",
+        "npz_sha256": "779bcab3d4a876d5ca5459cba4f0b3b9f1317f3f4da5b4bb5fef9044846efceb",
+        "prediction_sha256": "a892c8f46a3826e701fc520354f93a657db155d603a802b34a30cf051a0d89d4",
+        "truth_sha256": "b3644736563eeac8efd8bec95b8b9a364db466b9c4229ab3d41a9a11a70f32b8",
+        "window_count": 2214
+      },
+      "session_id": "ses-2020-11-24-Run1",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "6d20972d6940a0b1cc3d511f3e26c4470a541282460f2fcc2fbab33cf4646938",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-24-Run1/E0.npy",
+          "source_typed_sha256": "aab447c1c5c7078bf76dc62982011003fec4b778d543ac478fb00a22aa28d0a0"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "689437ffb3d205f24bfd6886254cf15235b147eba5493efdf7fa0c6d525fd8bb",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-24-Run1/carrier.npy",
+          "source_typed_sha256": "e4daf14928815b76d747c209b999e4ec168d23a576d8f5f3566546199e474766"
+        }
+      },
+      "support_activity_sha256": "5700a5dbf390fb93a644ddc9eb0762cd0699657fcb5bf79f8cb8b68877f72a31",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    },
+    "ses-2020-11-24-Run2": {
+      "dynamic_shared_film_e0": true,
+      "no_query_arrays_or_labels_read": true,
+      "official_dataset_tag_hash": "Run2_20201124",
+      "official_tag_stem": "Run2_20201124",
+      "payload_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "file_sha256": "502ba5326e945c0c8a6218e8a8bab641b0716f4b81b6e899f19f7dcf63d2b0b3",
+          "path": "calibration/ses-2020-11-24-Run2/E0.npy",
+          "shape": [
+            96,
+            50
+          ],
+          "typed_sha256": "59b05f2927f647d58b3ef277490d41af4387f07620a5fcf6c373f11b3d60ce51"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "file_sha256": "235bec8631511629d64d611ffea3159acf66d6264cf7ad2fdb64ccbb10d95162",
+          "path": "calibration/ses-2020-11-24-Run2/carrier.npy",
+          "shape": [
+            96,
+            4
+          ],
+          "typed_sha256": "1bd8e8710cd0d628174833e3a054b989d065573ca9329323c0da56ad72a47d68"
+        }
+      },
+      "payload_carrier_file_sha256": "235bec8631511629d64d611ffea3159acf66d6264cf7ad2fdb64ccbb10d95162",
+      "payload_carrier_typed_sha256": "1bd8e8710cd0d628174833e3a054b989d065573ca9329323c0da56ad72a47d68",
+      "payload_e0_file_sha256": "e75486738c79a8c5c755d68c526b5c370d0fbe27bbeb4133a1c210f191bbe25c",
+      "payload_e0_typed_sha256": "3599d52b6a4679a8082a59c09c5a5c32355c7125ce35839e2bb5e19bee6a11b3",
+      "raw_nwb": "/home/xinyuan/Work_host/SPINT/SPINT-main/data/000953/sub-MonkeyN-held-out-calib/sub-MonkeyN-held-out-calib_ses-2020-11-24-Run2_behavior+ecephys.nwb",
+      "raw_nwb_sha256": "b1d7fec18eaf36ac4ef327d82a7ab6d89e1db5eb9c5653b727b6390135cc15ba",
+      "selected_surface": "ext6_development",
+      "selection_replay_hashes": {
+        "array_output_ema_prediction_sha256": "fea92621b7315196a3e1ad319776d9c02cd6cadfb468c683946e9ae08c144dc7",
+        "array_query_coordinates_sha256": "b5f6d653a9659708d595a97704ddf78f08f206cd7a4f215285d8302855e65f06",
+        "array_raw_prediction_sha256": "93d276f522a95848aa26e109ec68e701ad30b502984c7324bf3a53468f0693ed",
+        "array_truth_sha256": "2d1da1fbbb17430a21b7b03bd039e6337eadf95d5cf5f7089ee36be6125ffeb6",
+        "array_valid_mask_sha256": "e04f64689f63e80723459a69c350d9231b7250843f5880482babab0b135a985f",
+        "npz_sha256": "ff7b957836380f5f435e5243d939153c2f7d721e01df3f76658c02cd6d22251e",
+        "prediction_sha256": "139580316205201b34f28424cc5b2423deaa8450d94de96c18cd5a51dfd8228e",
+        "truth_sha256": "7ed4370b1f3b0bb0d325de16dd10705c4b02f919880cbfb7a19c2d9a4e1a58be",
+        "window_count": 2350
+      },
+      "session_id": "ses-2020-11-24-Run2",
+      "source_arrays": {
+        "E0.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            50
+          ],
+          "source_file_sha256": "502ba5326e945c0c8a6218e8a8bab641b0716f4b81b6e899f19f7dcf63d2b0b3",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-24-Run2/E0.npy",
+          "source_typed_sha256": "59b05f2927f647d58b3ef277490d41af4387f07620a5fcf6c373f11b3d60ce51"
+        },
+        "carrier.npy": {
+          "dtype": "float32",
+          "shape": [
+            96,
+            4
+          ],
+          "source_file_sha256": "235bec8631511629d64d611ffea3159acf66d6264cf7ad2fdb64ccbb10d95162",
+          "source_path": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/banks/ext6_development/ses-2020-11-24-Run2/carrier.npy",
+          "source_typed_sha256": "1bd8e8710cd0d628174833e3a054b989d065573ca9329323c0da56ad72a47d68"
+        }
+      },
+      "support_activity_sha256": "a5fde92a796e07fd2a922c8f72f2f189ceb9cce7a7a02ef0a9f71f63837cc9d0",
+      "support_kind": "public held-out-calib raw M33",
+      "support_trial_ids": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ]
+    }
+  },
+  "source_bank": {
+    "all20_parent_admitted": true,
+    "bank_kind": "frozen_pretrained_A",
+    "bank_manifest": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/formal_cpu_v1/bank_manifest.json",
+    "bank_manifest_sha256": "3e3071b1683ef3a4500cfd50e10d0aa1be4970a817ee0e13901a5464eb776209",
+    "no_query_arrays_or_labels_read": true,
+    "parent_admission": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/parent_admission_v1.json",
+    "parent_admission_sha256": "0ff12e372a5fd9b9c695ce09473ed2d18bdea351f52aaab1e7d44e4e71153acb",
+    "selected_13_E0_carrier_checked": true
+  },
+  "source_pretrained_encoder": {
+    "available_b3s_not_20260730_champion": true,
+    "checkpoint": "/home/xinyuan/Work_host/SPINT/sua_exploration/p1_redo_anchored_20260809/m2_scratch/artifacts/p1_redo_anchor_m2_t4_full_cpu_f1_s42_20260809_161655/checkpoints/best.ckpt",
+    "checkpoint_sha256": "b01853a4b68eec80d19cd038a08452062d504fed3df224032cebcc88a83c91b4",
+    "export_or_target_parameter_updates": 0,
+    "historical_clean_source_only_chain_claim": false,
+    "historical_teacher_fit_scope": "UNKNOWN",
+    "no_query_truth_fitting": true,
+    "parent_admission": "/home/xinyuan/Work_host/SPINT/apst_final_week_20260916/receipts/diagnostics/m2_frozen_pretrained_bank_v1/parent_admission_v1.json",
+    "parent_admission_sha256": "0ff12e372a5fd9b9c695ce09473ed2d18bdea351f52aaab1e7d44e4e71153acb",
+    "position_encoding": "none in association-profile materializer",
+    "producer_source_updates": 0,
+    "recency_bias": "none in association-profile materializer",
+    "role": "frozen-A association-profile bank; exact available B3S source remains provenance, not a runtime dependency",
+    "tensor_count": 8
+  },
+  "status": "FORMAL_SELECTED_PREPARATION_NO_POST",
+  "task": "M2"
+}

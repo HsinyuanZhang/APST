@@ -1,0 +1,12 @@
+{
+  "task": "M2",
+  "id": 583092,
+  "epoch": 7,
+  "seed": 42,
+  "image_tag": "spint-m2-fss-public:v1",
+  "image_id": "sha256:d38d6e9485b2e1c7870982ab824adb556e2cf73aecb44b088e9098daf5f9a723",
+  "payload_manifest_sha256": "1eedb55bf2ca8012f0ea38a4be90d6e416baf624d262f8e639581800dd5074e3",
+  "source_checkpoint_sha256": "db0896f501008ad0517e081e466e11081804f25a1c5227fb77032beacc07cc35",
+  "packaged_selected_ema_decoder_sha256": "d1e9d9cbeef3f35cc82f4a967f87e4f7eb49d7b56f1e4c801752bd4d31dc3b7b",
+  "official_HOmean": 0.42337295173829836
+}

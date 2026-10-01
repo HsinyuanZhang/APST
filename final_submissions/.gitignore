@@ -1,0 +1,7 @@
+# These six frozen artifacts are intentionally versioned for the final release.
+!m1/checkpoints/source_checkpoint.pt
+!m2/checkpoints/source_checkpoint.pt
+!h1/checkpoints/source_checkpoint.pt
+!m1/build_context/payload/selected_ema_decoder.pt
+!m2/build_context/payload/selected_ema_decoder.pt
+!h1/build_context/payload/selected_ema_decoder.pt

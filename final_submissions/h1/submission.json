@@ -1,0 +1,12 @@
+{
+  "task": "H1",
+  "id": 583097,
+  "epoch": 13,
+  "seed": 44,
+  "image_tag": "h1-ladder-x2-s44-ring-public:v1",
+  "image_id": "sha256:7a1e7b8d2b50242245be0d43b8f0a5a24120e84b47784708f458d88a7da7ef0d",
+  "payload_manifest_sha256": "6a2916e07e589361806d7afa4a822b7c8cb3effffff8fd13fd28db11de5f643e",
+  "source_checkpoint_sha256": "0d554a28a31a294791d59c34d1c07ec59774d30b9ba51eb0b8d8c44de44007c0",
+  "packaged_selected_ema_decoder_sha256": "dc066e420b59db0d8347298c8cde8381ae698e8a61faf010f523dbf5a5164eb5",
+  "official_HOmean": 0.4404963152029235
+}

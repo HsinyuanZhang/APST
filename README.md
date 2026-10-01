@@ -10,6 +10,8 @@ set-temporal transformer and no target-session gradient updates.
 
 **Official FALCON leaderboard:** [View public submissions and benchmark scores on EvalAI](https://eval.ai/web/challenges/challenge-page/2319/leaderboard).
 
+**Final submission artifacts:** [M1, M2, and H1 checkpoints, frozen banks, runtime code, and Docker build instructions](final_submissions/).
+
 ## Datasets
 
 | Dataset | Public data |

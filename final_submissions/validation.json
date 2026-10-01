@@ -1,0 +1,56 @@
+{
+  "validated_at_utc": "2026-10-01T08:35:26.458242+00:00",
+  "scope": "Build all three public Docker recipes, import each entrypoint with --help, and compare streaming predictions against the original submission fixture. This is not a repeat of the official hidden evaluation.",
+  "base_image": "python:3.10-slim-bookworm@sha256:2559be987fd64d61badbdafd303ea58a9ccab36d6c3c08bce219e762177d2eca",
+  "pytorch": "2.5.1+cpu",
+  "network_during_inference": "none",
+  "fixture_atol": 1e-06,
+  "tasks": {
+    "m1": {
+      "submission_id": 583237,
+      "build_status": "PASS",
+      "entrypoint_help_status": "PASS",
+      "rebuilt_image_tag": "apst-m1:public-rebuild",
+      "rebuilt_image_id": "sha256:4eee310bfe2b2506b5de0766168634987e802326b5acfa0621154f637d6716d9",
+      "image_size_bytes": 460798517,
+      "fixture": {
+        "status": "PASS",
+        "batch_size": 4,
+        "steps": 8,
+        "max_abs": 2.384185791015625e-07
+      }
+    },
+    "m2": {
+      "submission_id": 583092,
+      "build_status": "PASS",
+      "entrypoint_help_status": "PASS",
+      "rebuilt_image_tag": "apst-m2:public-rebuild",
+      "rebuilt_image_id": "sha256:42388120933388f069f3bb8446d6ebdddc4fb2498e45ef8d222214de71066f06",
+      "image_size_bytes": 460881210,
+      "fixture": {
+        "status": "PASS",
+        "batch_size": 7,
+        "steps": 8,
+        "max_abs": 3.5762786865228954e-08
+      }
+    },
+    "h1": {
+      "submission_id": 583097,
+      "build_status": "PASS",
+      "entrypoint_help_status": "PASS",
+      "rebuilt_image_tag": "apst-h1:public-rebuild",
+      "rebuilt_image_id": "sha256:ca522765cf36c53a74beb5c17e64cbe8125b7cb78ea96dd19044e7aa92fe2522",
+      "image_size_bytes": 473037616,
+      "fixture": {
+        "status": "PASS",
+        "batch_size": 8,
+        "steps": 8,
+        "max_abs": 3.725290298461914e-09,
+        "reset_status": "PASS",
+        "row_reorder_status": "PASS",
+        "independent_active": 4,
+        "independent_steps": 4
+      }
+    }
+  }
+}

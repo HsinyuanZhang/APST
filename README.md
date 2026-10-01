@@ -1,7 +1,14 @@
 # APST
 
+[![arXiv](https://img.shields.io/badge/arXiv-2609.39080-b31b1b.svg)](https://arxiv.org/abs/2609.39080)
+[![FALCON Leaderboard](https://img.shields.io/badge/EvalAI-FALCON%20Leaderboard-0057B8.svg)](https://eval.ai/web/challenges/challenge-page/2319/leaderboard)
+
 Association profile conditioning for cross-session motor decoding with a
 set-temporal transformer and no target-session gradient updates.
+
+**Paper:** [arXiv:2609.39080](https://arxiv.org/abs/2609.39080) · [PDF](https://arxiv.org/pdf/2609.39080)
+
+**Official FALCON leaderboard:** [View public submissions and benchmark scores on EvalAI](https://eval.ai/web/challenges/challenge-page/2319/leaderboard).
 
 ## Datasets
 
@@ -41,8 +48,24 @@ for hosting the evaluation.
 
 ## Citation
 
-If you use this code, please cite our APST paper. The arXiv link and BibTeX
-entry will be added when the preprint is available.
+If you use this code, please cite [our paper](https://arxiv.org/abs/2609.39080).
+
+<details>
+<summary>BibTeX</summary>
+
+```bibtex
+@misc{zhang2026association,
+  title = {Association profile conditioning in a set-temporal transformer for cross-session intracortical motor decoding},
+  author = {Zhang, Xinyuan and Mo, Handong and Wen, Pengfei and Liang, Shuang and Yang, Jichang and Zeng, Yan and Wang, Zhongrui and Wang, Han},
+  year = {2026},
+  eprint = {2609.39080},
+  archivePrefix = {arXiv},
+  primaryClass = {q-bio.NC},
+  url = {https://arxiv.org/abs/2609.39080}
+}
+```
+
+</details>
 
 ## Contact
 

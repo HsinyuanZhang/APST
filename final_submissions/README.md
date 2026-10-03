@@ -2,11 +2,11 @@
 
 Exact model artifacts for APST's final public submissions under team **sustechhku**.
 
-| Task | EvalAI submission | Epoch | Seed | Official held-out R² mean | Artifacts |
+| Task | EvalAI submission | Official held-out R² mean | Artifacts |
 | --- | --- | --- | --- | --- | --- |
-| M1 | 583237 | 2 | 42 | 0.6541798272722487 | [M1](m1/) |
-| M2 | 583092 | 7 | 42 | 0.42337295173829836 | [M2](m2/) |
-| H1 | 583097 | 13 | 44 | 0.4404963152029235 | [H1](h1/) |
+| M1 | 583237 | 0.6541798272722487 | [M1](m1/) |
+| M2 | 583092 | 0.42337295173829836 | [M2](m2/) |
+| H1 | 583097 | 0.4404963152029235 | [H1](h1/) |
 
 [Official leaderboard](https://eval.ai/web/challenges/challenge-page/2319/leaderboard) · [Paper](https://arxiv.org/abs/2609.39080)
 

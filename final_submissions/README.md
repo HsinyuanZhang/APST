@@ -3,7 +3,7 @@
 Exact model artifacts for APST's final public submissions under team **sustechhku**.
 
 | Task | EvalAI submission | Official held-out R² mean | Artifacts |
-| --- | --- | --- | --- | --- | --- |
+| --- | --- |  --- | --- |
 | M1 | 583237 | 0.6541798272722487 | [M1](m1/) |
 | M2 | 583092 | 0.42337295173829836 | [M2](m2/) |
 | H1 | 583097 | 0.4404963152029235 | [H1](h1/) |

@@ -4,7 +4,7 @@ The release is a portability extraction of the recorded Sub-C and Sub-M
 experiments. Historical results are listed separately in
 [`results/dandi688_reference.json`](../results/dandi688_reference.json).
 
-The following checks use CPU and do not rerun the full training campaigns:
+The following checks use CPU and do not rerun full training runs:
 
 - For each subject, compare ACT-only, E0-only, Token-only, Full F0, and Full flat
   against the original experiment model with the same initialization and
@@ -55,16 +55,15 @@ fresh destination and its configuration generator requires a preparation receipt
 
 CPU checks cover the existing model contracts and Full/ACT support construction
 at 4, 8, 16, and 32 trials. Final APST, Static, WF, and budget entrypoints use
-artifacts generated under the new run directory; the historical campaign is not
-an input dependency.
+artifacts generated under the new run directory; no prior run is an
+input dependency.
 
-The RNN extraction was compared directly with the original campaign on a
-seed-42 synthetic 100-slot recording. Causal windows and label normalization
-were identical. Source training (two epochs with two updates each), target
-training from scratch (four updates), and source-pretrained fine-tuning (four
-updates) produced exactly equal parameter tensors. Full-recording FP64 EMA,
-variance-weighted R², and per-output R² also matched exactly. These CPU checks
-verify the extracted computation without rerunning the full training campaigns.
+The RNN extraction is checked on a seed-42 synthetic 100-slot recording:
+source training (two epochs with two updates each), target training from
+scratch (four updates), and source-pretrained fine-tuning (four updates) run
+end to end, and full-recording FP64 EMA, variance-weighted R², and per-output
+R² are recomputed from the produced tensors. These CPU checks verify the
+extracted computation without downloading data.
 
 The RNN support adapter was also checked on the original public source
 recordings `sub-C_ses-CO-20150309` and `sub-M_ses-CO-20150511`.

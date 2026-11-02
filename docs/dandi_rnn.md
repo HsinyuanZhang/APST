@@ -40,7 +40,7 @@ python -m apst.dandi_rnn --manifest runs/dandi_rnn_m_records/manifest.json \
   --config configs/dandi_rnn/default.json --out runs/dandi_rnn_m --raw-root data/000688/sub-M --device cuda:0
 ```
 
-The default preserves the campaign surfaces: source uses six H/LR cells,
+The default preserves the reference surfaces: source uses six H/LR cells,
 20 epochs and 256 updates per epoch, source-session Q50 query labels,
 and saves the earliest best dev epoch. Scratch selection is the six-cell M32
 surface with 200 epochs, 16 updates per epoch, and the historical evaluation

@@ -23,7 +23,7 @@ def cache_root(config):
  return resolve_path(config.get('cache'), default=output_root()/'prepared_sua')
 def validate(config):
  config=dict(config)
- if config['schema'] != SCHEMA or config['method'] not in SITES: raise ValueError('unknown campaign/method')
+ if config['schema'] != SCHEMA or config['method'] not in SITES: raise ValueError('unknown method')
  if config['stage'] not in ('pretrain','train') or config['temporal'] not in ('F0','flat'): raise ValueError('unknown training stage or temporal policy')
  if config['seed'] not in (42,43,44) or config['representation'] != 'sua': raise ValueError('Sub-C release is SUA only')
  if config['protocol'] != protocol.protocol_dict() or config['recipe'] != RECIPE: raise ValueError('2015 data split or matched training recipe drift')

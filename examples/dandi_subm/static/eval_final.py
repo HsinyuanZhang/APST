@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-use final evaluator for Static-F0 after the shared campaign seal.
+"""One-use final evaluator for Static-F0 after the shared run seal.
 
 The shared final gate is owned by the training workflow.  This evaluator only
 consumes its validated capability; it cannot construct or bypass final access.
@@ -15,7 +15,7 @@ HERE=Path(__file__).resolve().parent
 from apst.dandi_subm import protocol, training as T
 from apst.dandi_subm.subm_common import aggregate_scores, score_predictions, sha256
 from apst.dandi_subm.subm_data import load_cached_session
-CAMPAIGN=protocol.output_root()
+RUN_ROOT=protocol.output_root()
 
 class StaticEncoder(nn.Module):
  def __init__(self, units:int=100, e0_dim:int=50, seed:int=42):
@@ -30,7 +30,7 @@ def atomic(path:Path,value:dict)->None:
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--seal',type=Path,required=True);p.add_argument('--final-cache',type=Path,required=True);p.add_argument('--final-receipt',type=Path,required=True);p.add_argument('--device',default='cuda:0');a=p.parse_args()
- run=CAMPAIGN/'static'/'runs'/'static_f0_s42';receipt_path=run/'static_receipt.json';selection_path=run/'selection.json';claim=run/'.final_claim'
+ run=RUN_ROOT/'static'/'runs'/'static_f0_s42';receipt_path=run/'static_receipt.json';selection_path=run/'selection.json';claim=run/'.final_claim'
  if not receipt_path.is_file() or not selection_path.is_file():raise FileNotFoundError('formal Static-F0 receipt/selection required')
  static=json.loads(receipt_path.read_text());sel=json.loads(selection_path.read_text())
  if static.get('status')!='DEV_SELECTED' or static.get('method')!='Static-F0 (source-trained global E0)' or static.get('final_sessions_opened')!=0:raise ValueError('Static-F0 is not a formal no-final selection')

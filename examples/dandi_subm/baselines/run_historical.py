@@ -16,9 +16,9 @@ import numpy as np
 from apst.legacy_dandi.numerics import FactorModel, causal_lags, fit_ridge_grid, smooth_raw
 from apst.dandi_subm import protocol
 
-CAMPAIGN = protocol.output_root()
-PREPARED = CAMPAIGN / "prepared_sua"
-OUT = CAMPAIGN / "baselines" / "results"
+RUN_ROOT = protocol.output_root()
+PREPARED = RUN_ROOT / "prepared_sua"
+OUT = RUN_ROOT / "baselines" / "results"
 SOURCE = tuple(f"sub-M_ses-CO-{x}" for x in ("20150511", "20150512", "20150610", "20150611", "20150612", "20150615"))
 DEV = tuple(f"sub-M_ses-CO-{x}" for x in ("20150616", "20150617"))
 FINAL = tuple(f"sub-M_ses-CO-{x}" for x in ("20150623", "20150625", "20150626"))

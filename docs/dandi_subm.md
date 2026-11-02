@@ -1,6 +1,6 @@
 # DANDI000688 Sub-M release workflow
 
-This release reproduces the fixed 2015 M1-only sub-M campaign: six source
+This release reproduces the fixed 2015 M1-only sub-M protocol: six source
 sessions, two development sessions, and a capability-gated three-session
 final pass.  It does not contain cached data, checkpoints, prior receipts, or
 final predictions.
@@ -56,7 +56,7 @@ $PY examples/dandi_subm/budget/evaluate.py --split dev --device cuda:0
 After all development selections are formal, seal once, score APST ACT/Full,
 then score Static-F0, WF, and the final calibration-budget surface.  Each
 final command requires the newly created seal/cache and cannot reuse private
-campaign outputs.
+run outputs.
 
 ```bash
 $PY examples/dandi_subm/finalize.py seal

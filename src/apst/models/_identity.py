@@ -47,8 +47,8 @@ class SharedSetFrontendIdentity(nn.Module):
         self.slot_proj = nn.Linear(N_SLOTS * SET_DIM, TEMPORAL_WIDTH)
 
 
-class BTransformerUnifiedDecoderIdentity(nn.Module):
-    """Temporary owner whose construction matches the released P16 RNG layout."""
+class P16FrontendOwner(nn.Module):
+    """Constructs the P16 frontend parameters in a fixed RNG order."""
 
     def __init__(
         self,

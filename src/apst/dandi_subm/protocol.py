@@ -4,7 +4,7 @@ import hashlib, json, os
 
 
 def output_root(root: str | Path | None = None) -> Path:
- """Return the campaign-artifact directory without depending on a checkout."""
+ """Return the run-artifact directory without depending on a checkout."""
  value = root if root is not None else os.environ.get("APST_SUBM_ROOT", "dandi_subm")
  return Path(value).expanduser().resolve()
 

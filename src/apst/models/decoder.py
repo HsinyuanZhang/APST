@@ -16,7 +16,7 @@ from torch import Tensor, nn
 
 from .bank import TaskBank
 from .frontend import whole_unit_dropout
-from ._identity import BTransformerUnifiedDecoderIdentity
+from ._identity import P16FrontendOwner
 
 from .config import RiftTemporalConfig
 from .temporal import RiftTemporal
@@ -105,7 +105,7 @@ class RiftDecoder(nn.Module):
         self.out_dim = self.geometry["out_dim"]
         # This initializes the v1-defined frontend/readout reproducibly.  Its
         # old temporal module is discarded immediately; it is never executed.
-        base = BTransformerUnifiedDecoderIdentity(
+        base = P16FrontendOwner(
             {"task": self.task, **self.geometry},
             identity_mode="proj_add",
             proj_dim=proj_dim,

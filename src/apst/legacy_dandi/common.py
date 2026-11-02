@@ -78,7 +78,7 @@ def jsonable(value):
 
 
 def digest(value) -> str:
-    """Stable JSON/array receipt digest used by the F0 campaign."""
+    """Stable JSON/array receipt digest used by the F0 recipe."""
     return hashlib.sha256(
         json.dumps(jsonable(value), sort_keys=True, separators=(",", ":"), allow_nan=False).encode()
     ).hexdigest()

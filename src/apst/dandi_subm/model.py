@@ -1,4 +1,4 @@
-"""DANDI688 F0/Flat profile-site models for the 2026-09-18 campaign.
+"""DANDI688 F0/Flat profile-site models.
 
 The approved sites are ACT (no profile), identity-only (E0 profile),
 token-only, and dual-site. Explicit gates prevent silent profile injection.

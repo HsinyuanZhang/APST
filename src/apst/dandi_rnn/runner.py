@@ -1,4 +1,4 @@
-"""Faithful portable extraction of the historical DANDI one-layer LSTM campaign."""
+"""Portable DANDI one-layer LSTM baseline runner."""
 from __future__ import annotations
 import argparse,json,hashlib,shutil
 from pathlib import Path

@@ -13,7 +13,7 @@ def output_root() -> Path:
     A package-installed ``__file__`` lives below ``site-packages``.  Falling
     back to a path derived from it made an omitted environment variable point
     at an installation directory, which is commonly read-only and is not a
-    campaign workspace.  The documented ``APST_SUBC_ROOT`` remains the
+    run workspace.  The documented ``APST_SUBC_ROOT`` remains the
     reproducible explicit setting; the fallback is only a portable local
     convenience.
     """

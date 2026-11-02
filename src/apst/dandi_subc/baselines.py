@@ -241,7 +241,7 @@ def _score(record: Any, prediction: np.ndarray) -> float:
 
 def _best_candidate(records: list[Any], method: str) -> dict:
     if method == "wf_fss":
-        # This dense-label comparator was frozen before the current campaign;
+        # This dense-label comparator is fixed in advance;
         # it is evaluated here but never re-selected on development data.
         return {"config": dict(FROZEN_WF_FSS), "selection": "historical_frozen"}
 

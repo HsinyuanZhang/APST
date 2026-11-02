@@ -1,4 +1,4 @@
-"""Executable Sub-C campaign entry points."""
+"""Executable DANDI Sub-C entry points."""
 from __future__ import annotations
 import argparse,json,hashlib
 from pathlib import Path

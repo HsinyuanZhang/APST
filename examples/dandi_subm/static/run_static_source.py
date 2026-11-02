@@ -10,10 +10,10 @@ HERE = Path(__file__).resolve().parent
 from apst.dandi_subm import training as T
 from apst.dandi_subm import protocol
 from static_training import train as train_static
-CAMPAIGN = protocol.output_root()
+RUN_ROOT = protocol.output_root()
 
-OUT = CAMPAIGN / "static" / "runs" / "static_f0_s42"
-CACHE = CAMPAIGN / "prepared_sua"
+OUT = RUN_ROOT / "static" / "runs" / "static_f0_s42"
+CACHE = RUN_ROOT / "prepared_sua"
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -49,7 +49,7 @@ def write_receipt(dest: Path, smoke_updates: int | None) -> None:
     print(json.dumps({"status": static["status"], "method": static["method"], "selected": None if selected is None else selected["checkpoint"]}, indent=2))
 
 def train(device: str, smoke_updates: int | None = None) -> None:
-    dest = CAMPAIGN / "static" / "runs" / ("static_f0_trainstage_smoke_direct" if smoke_updates is not None else "static_f0_s42")
+    dest = RUN_ROOT / "static" / "runs" / ("static_f0_trainstage_smoke_direct" if smoke_updates is not None else "static_f0_s42")
     if dest.exists(): raise FileExistsError(f"refusing to overwrite {dest}")
     if not (CACHE / "prepared_receipt.json").is_file(): raise FileNotFoundError(CACHE / "prepared_receipt.json")
     receipt = train_static(CACHE, dest, device=device, smoke_updates=smoke_updates)
@@ -58,4 +58,4 @@ def train(device: str, smoke_updates: int | None = None) -> None:
 if __name__ == "__main__":
     p=argparse.ArgumentParser(); p.add_argument("stage", choices=("train", "write-smoke-receipt")); p.add_argument("--device", default="cuda:0"); p.add_argument("--smoke-updates", type=int); a=p.parse_args()
     if a.stage == "train": train(a.device, a.smoke_updates)
-    else: write_receipt(CAMPAIGN / "static" / "runs" / "static_f0_trainstage_smoke_direct", 2)
+    else: write_receipt(RUN_ROOT / "static" / "runs" / "static_f0_trainstage_smoke_direct", 2)

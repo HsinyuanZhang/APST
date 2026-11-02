@@ -1,0 +1,107 @@
+{
+  "schema": "apst_falcon_protocol_v1",
+  "description": "Frozen FALCON M1/M2/H1 training surfaces for APST. Source sessions are held-in calibration recordings; development sessions are public held-out calibration recordings and are the only selection surface.",
+  "output_ema": {
+    "alpha": 0.3333333333333333,
+    "training": false,
+    "clock": "full_recording",
+    "reset": "session",
+    "state_0": "pred_0"
+  },
+  "h1_grouped_seven": {
+    "S6": ["ses-19250126T113454", "ses-19250126T114029"],
+    "S7": ["ses-19250127T120333", "ses-19250127T120826"],
+    "S8": ["ses-19250129T112555", "ses-19250129T113059"],
+    "S9": ["ses-19250202T113958", "ses-19250202T114452"],
+    "S10": ["ses-19250203T113515", "ses-19250203T114018"],
+    "S11": ["ses-19250206T112219", "ses-19250206T112712"],
+    "S12": ["ses-19250209T111826", "ses-19250209T112327"]
+  },
+  "tasks": {
+    "m1": {
+      "dandiset": "000941",
+      "context_bins": 100,
+      "windows": [25, 25, 25, 24],
+      "units": 64,
+      "outputs": 16,
+      "e0_dim": 100,
+      "profile_hidden": 64,
+      "support_trials": 10,
+      "support_bins": 1024,
+      "support_resample": "cubic",
+      "behavior_scale": 1.0,
+      "carrier_estimator": "muscle_response16_svd4_global_rms",
+      "carrier_fit_sessions": [
+        "ses-20120924",
+        "ses-20120926",
+        "ses-20120927",
+        "ses-20120928"
+      ],
+      "source_sessions": [
+        "ses-20120924",
+        "ses-20120926",
+        "ses-20120927",
+        "ses-20120928"
+      ],
+      "dev_sessions": ["ses-20121004", "ses-20121017", "ses-20121024"],
+      "dev_metric": "equal_session_mean_full_clock_output_ema",
+      "muscle_emg_source_stop_trial": 310
+    },
+    "m2": {
+      "dandiset": "000953",
+      "context_bins": 50,
+      "windows": [13, 12, 12, 12],
+      "units": 96,
+      "outputs": 2,
+      "e0_dim": 50,
+      "profile_hidden": 64,
+      "support_trials": 33,
+      "support_bins": 100,
+      "support_resample": "cubic",
+      "behavior_scale": 5.0,
+      "carrier_estimator": "move_t4_direction_ols",
+      "move_t4_window_bins": [5, 30],
+      "source_sessions": "held_in_enumerated",
+      "dev_sessions": [
+        "ses-2020-10-30-Run1",
+        "ses-2020-10-30-Run2",
+        "ses-2020-11-18-Run1",
+        "ses-2020-11-19-Run1",
+        "ses-2020-11-24-Run1",
+        "ses-2020-11-24-Run2"
+      ],
+      "dev_metric": "equal_session_mean_full_clock_output_ema"
+    },
+    "h1": {
+      "dandiset": "000954",
+      "context_bins": 300,
+      "windows": [75, 75, 75, 74],
+      "units": 176,
+      "outputs": 7,
+      "e0_dim": 700,
+      "profile_hidden": 32,
+      "support_trials": 3,
+      "support_bins": 1024,
+      "support_resample": "cubic",
+      "behavior_scale": 20.0,
+      "carrier_estimator": "signed_state14_source_svd4",
+      "source_sessions": [
+        "ses-19250101T111740",
+        "ses-19250101T112404",
+        "ses-19250108T110520",
+        "ses-19250108T111022",
+        "ses-19250108T111455",
+        "ses-19250113T120811",
+        "ses-19250113T121303",
+        "ses-19250115T110633",
+        "ses-19250115T111328",
+        "ses-19250119T113543",
+        "ses-19250119T114045",
+        "ses-19250120T115044",
+        "ses-19250120T115537"
+      ],
+      "dev_sessions": "held_out_grouped_seven",
+      "dev_metric": "ho_m3_grouped_seven_full_clock_output_ema"
+    }
+  }
+}

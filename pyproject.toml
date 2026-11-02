@@ -26,6 +26,15 @@ experiments = [
   "hdmf==3.14.5",
   "h5py==3.12.1",
 ]
+falcon = [
+  "torch>=2.5.1,<2.6",
+  "numpy==2.0.1",
+  "scipy==1.14.1",
+  "pynwb==2.8.2",
+  "hdmf==3.14.5",
+  "h5py==3.12.1",
+  "falcon-challenge @ git+https://github.com/snel-repo/falcon-challenge.git",
+]
 test = ["pytest>=7.4,<9"]
 
 [project.scripts]
@@ -38,6 +47,7 @@ where = ["src"]
 "apst.legacy_dandi" = ["*.json"]
 "apst.dandi_subc" = ["*.json"]
 "apst.dandi_subm" = ["*.json"]
+"apst.falcon" = ["*.json"]
 
 [tool.setuptools]
 license-files = ["LICENSE", "LICENSES/*.txt"]

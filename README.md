@@ -40,6 +40,15 @@ For FALCON data, run `python -m apst.data.download --tasks m1 m2 h1`.
 The FALCON loader additionally requires
 [`falcon-challenge`](https://github.com/snel-repo/falcon-challenge).
 
+FALCON M1/M2/H1 training (two-stage source pretraining and decoder training,
+closed-form association-profile calibration) is provided by
+[`python -m apst.falcon`](docs/falcon.md) with one unified configuration:
+a FiLM switch and an adjustable recency-ladder scale. See the
+[association-profile construction guide](docs/falcon_profiles.md) for the
+per-task carrier estimators and calibration formulas, and
+[final_submissions/](final_submissions/) for the released checkpoints and
+streaming runtimes.
+
 ## Acknowledgements
 
 We thank the original dataset authors and [DANDI](https://dandiarchive.org/)

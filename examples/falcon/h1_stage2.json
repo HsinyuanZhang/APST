@@ -1,0 +1,33 @@
+{
+  "schema": "apst_falcon_v1",
+  "task": "h1",
+  "stage": "stage2",
+  "seed": 42,
+  "film": true,
+  "ladder_scale": 2.0,
+  "recipe": {
+    "epochs": 24,
+    "batch": 32,
+    "lr_peak": 0.0001,
+    "weight_decay": 0.01,
+    "slope_weight_decay": 0.0,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "grad_clip": 1.0,
+    "ema_decay": 0.9995,
+    "unit_dropout": 0.1,
+    "warmup_updates": null,
+    "cosine_min_factor": 0.1,
+    "cosine_schedule_epochs": 32
+  },
+  "output_ema": {
+    "alpha": 0.3333333333333333,
+    "training": false,
+    "clock": "full_recording",
+    "reset": "session",
+    "state_0": "pred_0"
+  }
+}
